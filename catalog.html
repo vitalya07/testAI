@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — NORD HOME</title>
+    <meta name="description" content="Каталог декора, текстиля и освещения NORD HOME. Свечи, вазы, светильники и пледы для уютного современного дома.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/catalog.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+
+            <a class="header__logo" href="index.html">
+                <span class="header__logo-name">NORD</span>
+                <span class="header__logo-sub">HOME</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link header__nav-link--active" href="catalog.html" aria-current="page">Каталог</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="new.html">Новинки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="popular.html">Популярное</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="for-home.html">Для дома</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="about.html">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a class="header__search" href="search.html">
+                    <span class="header__search-icon" aria-hidden="true">🔍</span>
+                    <span class="header__search-text">Поиск</span>
+                </a>
+                <a class="header__favorites" href="favorites.html" aria-label="Избранное">
+                    <span class="header__favorites-icon" aria-hidden="true">♡</span>
+                </a>
+                <a class="header__cart" href="cart.html" aria-label="Корзина">
+                    <span class="header__cart-icon" aria-hidden="true">🛒</span>
+                    <span class="header__cart-count">2</span>
+                </a>
+
+                <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header__burger-box">
+                        <span class="header__burger-line header__burger-line--top"></span>
+                        <span class="header__burger-line header__burger-line--middle"></span>
+                        <span class="header__burger-line header__burger-line--bottom"></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ================= PAGE INTRO ================= -->
+        <section class="catalog-intro" aria-labelledby="catalog-intro-title">
+            <div class="catalog-intro__container">
+
+                <nav class="catalog-intro__breadcrumbs" aria-label="Хлебные крошки">
+                    <ol class="catalog-intro__breadcrumb-list">
+                        <li class="catalog-intro__breadcrumb-item">
+                            <a class="catalog-intro__breadcrumb-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="catalog-intro__breadcrumb-item" aria-current="page">Каталог</li>
+                    </ol>
+                </nav>
+
+                <p class="catalog-intro__eyebrow">ВСЯ КОЛЛЕКЦИЯ</p>
+                <h1 class="catalog-intro__title" id="catalog-intro-title">Каталог</h1>
+                <p class="catalog-intro__text">
+                    Декор, текстиль и аксессуары для уютного современного дома.
+                    Предметы, которые легко сочетаются между собой
+                    и работают на атмосферу каждый день.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- ================= CATEGORIES STRIP ================= -->
+        <section class="catalog-categories" aria-labelledby="catalog-categories-title">
+            <div class="catalog-categories__container">
+                <h2 class="catalog-categories__title" id="catalog-categories-title">РАЗДЕЛЫ КАТАЛОГА</h2>
+
+                <ul class="catalog-categories__list">
+                    <li class="catalog-categories__item">
+                        <a class="category-card" href="category/candles.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-candles.jpeg" alt="Свечи и ароматические диффузоры">
+                            </span>
+                            <h3 class="category-card__title">Свечи и ароматы</h3>
+                            <p class="category-card__subtitle">Создайте атмосферу</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="catalog-categories__item">
+                        <a class="category-card" href="category/decor.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-decor.jpg" alt="Декоративные вазы и статуэтки">
+                            </span>
+                            <h3 class="category-card__title">Декор</h3>
+                            <p class="category-card__subtitle">Детали, которые меняют интерьер</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="catalog-categories__item">
+                        <a class="category-card" href="category/lighting.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-lighting.jpg" alt="Настольная лампа с тёплым светом">
+                            </span>
+                            <h3 class="category-card__title">Освещение</h3>
+                            <p class="category-card__subtitle">Теплый свет для дома</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="catalog-categories__item">
+                        <a class="category-card" href="category/textile.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-textile.jpg" alt="Пледы и текстиль для дома">
+                            </span>
+                            <h3 class="category-card__title">Текстиль</h3>
+                            <p class="category-card__subtitle">Мягкость и комфорт</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= CATALOG ================= -->
+        <section class="catalog" aria-labelledby="catalog-title">
+            <div class="catalog__container">
+
+                <!-- ---------- MOBILE FILTERS TOGGLE (CSS-only) ---------- -->
+                <div class="catalog__filters-mobile">
+                    <input class="catalog__filters-toggle" type="checkbox" id="catalog-filters-toggle" name="filters-toggle">
+                    <label class="catalog__filters-toggle-label" for="catalog-filters-toggle">Фильтры</label>
+                </div>
+
+                <!-- ---------- FILTERS ---------- -->
+                <aside class="catalog__filters" aria-labelledby="catalog-filters-title">
+                    <h2 class="catalog__filters-title" id="catalog-filters-title">Фильтры</h2>
+
+                    <form class="catalog__filters-form" action="#" method="get">
+
+                        <fieldset class="catalog__filter-group">
+                            <legend class="catalog__filter-legend">Категория</legend>
+                            <ul class="catalog__filter-list">
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-link catalog__filter-link--active" href="catalog.html" data-category="all" aria-current="true">Все товары</a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-link" href="category/candles.html" data-category="candles">Свечи и ароматы</a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-link" href="category/decor.html" data-category="decor">Декор</a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-link" href="category/lighting.html" data-category="lighting">Освещение</a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-link" href="category/textile.html" data-category="textile">Текстиль</a>
+                                </li>
+                            </ul>
+                        </fieldset>
+
+                        <fieldset class="catalog__filter-group">
+                            <legend class="catalog__filter-legend">Цена, ₽</legend>
+                            <div class="catalog__filter-range">
+                                <label class="catalog__filter-label" for="catalog-price-min">От</label>
+                                <input class="catalog__filter-input" type="number" id="catalog-price-min" name="price-min" placeholder="1 000" min="0" step="100">
+                                <label class="catalog__filter-label" for="catalog-price-max">До</label>
+                                <input class="catalog__filter-input" type="number" id="catalog-price-max" name="price-max" placeholder="10 000" min="0" step="100">
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="catalog__filter-group">
+                            <legend class="catalog__filter-legend">Материал</legend>
+                            <ul class="catalog__filter-list">
+                                <li class="catalog__filter-item">
+                                    <label class="catalog__filter-check">
+                                        <input class="catalog__filter-checkbox" type="checkbox" name="material[]" value="ceramic">
+                                        <span class="catalog__filter-check-text">Керамика</span>
+                                    </label>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <label class="catalog__filter-check">
+                                        <input class="catalog__filter-checkbox" type="checkbox" name="material[]" value="glass">
+                                        <span class="catalog__filter-check-text">Стекло</span>
+                                    </label>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <label class="catalog__filter-check">
+                                        <input class="catalog__filter-checkbox" type="checkbox" name="material[]" value="wood">
+                                        <span class="catalog__filter-check-text">Дерево</span>
+                                    </label>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <label class="catalog__filter-check">
+                                        <input class="catalog__filter-checkbox" type="checkbox" name="material[]" value="textile">
+                                        <span class="catalog__filter-check-text">Текстиль</span>
+                                    </label>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <label class="catalog__filter-check">
+                                        <input class="catalog__filter-checkbox" type="checkbox" name="material[]" value="stone">
+                                        <span class="catalog__filter-check-text">Камень</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+
+                        <fieldset class="catalog__filter-group">
+                            <legend class="catalog__filter-legend">Цвет</legend>
+                            <ul class="catalog__filter-list catalog__filter-list--colors">
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-color catalog__filter-color--beige" href="color/beige.html" data-color="beige" aria-label="Бежевый"></a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-color catalog__filter-color--brown" href="color/brown.html" data-color="brown" aria-label="Коричневый"></a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-color catalog__filter-color--grey" href="color/grey.html" data-color="grey" aria-label="Серый"></a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-color catalog__filter-color--black" href="color/black.html" data-color="black" aria-label="Чёрный"></a>
+                                </li>
+                                <li class="catalog__filter-item">
+                                    <a class="catalog__filter-color catalog__filter-color--white" href="color/white.html" data-color="white" aria-label="Белый"></a>
+                                </li>
+                            </ul>
+                        </fieldset>
+
+                        <fieldset class="catalog__filter-group">
+                            <legend class="catalog__filter-legend">Стоимость доставки</legend>
+                            <label class="catalog__filter-check">
+                                <input class="catalog__filter-checkbox" type="checkbox" name="free-shipping" value="yes">
+                                <span class="catalog__filter-check-text">Бесплатная доставка</span>
+                            </label>
+                        </fieldset>
+
+                        <div class="catalog__filter-actions">
+                            <button class="catalog__filter-apply" type="submit">Применить</button>
+                            <button class="catalog__filter-reset" type="reset">Сбросить</button>
+                        </div>
+
+                    </form>
+                </aside>
+
+                <!-- ---------- PRODUCTS ---------- -->
+                <div class="catalog__content">
+
+                    <div class="catalog__toolbar">
+                        <p class="catalog__count">Найдено <span class="catalog__count-value">12</span> товаров</p>
+
+                        <div class="catalog__sort">
+                            <label class="catalog__sort-label" for="catalog-sort">Сортировка</label>
+                            <select class="catalog__sort-select" id="catalog-sort" name="sort">
+                                <option value="popular" selected>По популярности</option>
+                                <option value="new">Сначала новинки</option>
+                                <option value="price-asc">Сначала дешёвые</option>
+                                <option value="price-desc">Сначала дорогие</option>
+                                <option value="name">По названию</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h2 class="catalog__title" id="catalog-title">Все товары</h2>
+
+                    <ul class="catalog__list">
+
+                        <li class="catalog__item" data-price="1290" data-id="candle-sever" data-category="candles" data-material="ceramic" data-color="beige" data-new="false" data-popular="true" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/candle-sever.html">
+                                    <img class="product-card__image" src="assets/images/product-candle.jpeg" alt="Свеча «Север»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить свечу «Север» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/candle-sever.html">Свеча «Север»</a>
+                                </h3>
+                                <p class="product-card__price">1 290 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="2490" data-id="vase-minimal" data-category="decor" data-material="ceramic" data-color="white" data-new="false" data-popular="true" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/vase-minimal.html">
+                                    <img class="product-card__image" src="assets/images/product-vase.jpeg" alt="Ваза «Минимал»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить вазу «Минимал» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/vase-minimal.html">Ваза «Минимал»</a>
+                                </h3>
+                                <p class="product-card__price">2 490 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="4990" data-id="lamp-oslo" data-category="lighting" data-material="glass" data-color="black" data-new="false" data-popular="true" data-free-shipping="false">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/lamp-oslo.html">
+                                    <img class="product-card__image" src="assets/images/product-lamp.webp" alt="Настольная лампа «Осло»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить лампу «Осло» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/lamp-oslo.html">Настольная лампа «Осло»</a>
+                                </h3>
+                                <p class="product-card__price">4 990 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="3290" data-id="blanket-warm" data-category="textile" data-material="textile" data-color="beige" data-new="false" data-popular="true" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/blanket-warm.html">
+                                    <img class="product-card__image" src="assets/images/product-blanket.jpeg" alt="Плед «Тепло»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить плед «Тепло» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/blanket-warm.html">Плед «Тепло»</a>
+                                </h3>
+                                <p class="product-card__price">3 290 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="1590" data-id="candlestick-stone" data-category="decor" data-material="stone" data-color="grey" data-new="true" data-popular="false" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/candlestick-stone.html">
+                                    <img class="product-card__image" src="assets/images/new-candlestick.jpg" alt="Подсвечник «Камень»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить подсвечник «Камень» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/candlestick-stone.html">Подсвечник «Камень»</a>
+                                </h3>
+                                <p class="product-card__price">1 590 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="2290" data-id="vase-forma" data-category="decor" data-material="ceramic" data-color="white" data-new="true" data-popular="false" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/vase-forma.html">
+                                    <img class="product-card__image" src="assets/images/new-vase.webp" alt="Ваза «Форма»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить вазу «Форма» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/vase-forma.html">Ваза «Форма»</a>
+                                </h3>
+                                <p class="product-card__price">2 290 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="1990" data-id="diffuser-forest" data-category="candles" data-material="glass" data-color="brown" data-new="true" data-popular="false" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/diffuser-forest.html">
+                                    <img class="product-card__image" src="assets/images/new-diffuser.jpeg" alt="Аромадиффузор «Лес»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить аромадиффузор «Лес» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/diffuser-forest.html">Аромадиффузор «Лес»</a>
+                                </h3>
+                                <p class="product-card__price">1 990 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="3490" data-id="blanket-north-wind" data-category="textile" data-material="textile" data-color="grey" data-new="true" data-popular="false" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/blanket-north-wind.html">
+                                    <img class="product-card__image" src="assets/images/new-blanket.jpg" alt="Плед «Северный ветер»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить плед «Северный ветер» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/blanket-north-wind.html">Плед «Северный ветер»</a>
+                                </h3>
+                                <p class="product-card__price">3 490 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="4290" data-id="lamp-moon" data-category="lighting" data-material="glass" data-color="white" data-new="true" data-popular="false" data-free-shipping="false">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/lamp-moon.html">
+                                    <img class="product-card__image" src="assets/images/new-lamp.jpg" alt="Светильник «Луна»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить светильник «Луна» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/lamp-moon.html">Светильник «Луна»</a>
+                                </h3>
+                                <p class="product-card__price">4 290 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="2190" data-id="basket-nord" data-category="decor" data-material="wood" data-color="brown" data-new="true" data-popular="false" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/basket-nord.html">
+                                    <img class="product-card__image" src="assets/images/new-basket.jpeg" alt="Корзина «Норд»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить корзину «Норд» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/basket-nord.html">Корзина «Норд»</a>
+                                </h3>
+                                <p class="product-card__price">2 190 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="2790" data-id="candle-collection" data-category="candles" data-material="ceramic" data-color="beige" data-new="false" data-popular="true" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/candle-collection.html">
+                                    <img class="product-card__image" src="assets/images/category-candles.jpeg" alt="Набор свечей «Коллекция»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить набор свечей «Коллекция» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/candle-collection.html">Набор свечей «Коллекция»</a>
+                                </h3>
+                                <p class="product-card__price">2 790 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                        <li class="catalog__item" data-price="5490" data-id="vase-set" data-category="decor" data-material="glass" data-color="brown" data-new="false" data-popular="true" data-free-shipping="true">
+                            <article class="product-card">
+                                <a class="product-card__media" href="product/vase-set.html">
+                                    <img class="product-card__image" src="assets/images/category-decor.jpg" alt="Комплект ваз «Тишина»">
+                                    <button class="product-card__favorite" type="button" aria-label="Добавить комплект ваз «Тишина» в избранное" aria-pressed="false">♡</button>
+                                </a>
+                                <h3 class="product-card__title">
+                                    <a class="product-card__link" href="product/vase-set.html">Комплект ваз «Тишина»</a>
+                                </h3>
+                                <p class="product-card__price">5 490 ₽</p>
+                                <button class="product-card__button" type="button">В корзину</button>
+                            </article>
+                        </li>
+
+                    </ul>
+
+                    <!-- ---------- PAGINATION ---------- -->
+                    <nav class="catalog__pagination" aria-label="Навигация по страницам каталога">
+                        <ul class="catalog__pagination-list">
+                            <li class="catalog__pagination-item">
+                                <a class="catalog__pagination-link catalog__pagination-link--active" href="catalog.html" aria-current="page">1</a>
+                            </li>
+                            <li class="catalog__pagination-item">
+                                <a class="catalog__pagination-link" href="catalog.html?page=2">2</a>
+                            </li>
+                            <li class="catalog__pagination-item">
+                                <a class="catalog__pagination-link" href="catalog.html?page=3">3</a>
+                            </li>
+                            <li class="catalog__pagination-item">
+                                <a class="catalog__pagination-link" href="catalog.html?page=2" aria-label="Следующая страница">→</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= PROMO STRIP ================= -->
+        <section class="catalog-promo" aria-labelledby="catalog-promo-title">
+            <div class="catalog-promo__container">
+                <div class="catalog-promo__media">
+                    <img class="catalog-promo__image" src="assets/images/promo-details.jpeg" alt="Интерьер с декоративными деталями NORD HOME">
+                </div>
+                <div class="catalog-promo__content">
+                    <h2 class="catalog-promo__title" id="catalog-promo-title">
+                        Маленькие детали<br>
+                        создают большую атмосферу
+                    </h2>
+                    <p class="catalog-promo__text">
+                        Мы выбираем предметы, которые красиво выглядят
+                        не только на фотографиях, но и каждый день
+                        работают на атмосферу вашего дома.
+                    </p>
+                    <a class="catalog-promo__button" href="collection.html">Смотреть коллекцию →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <p class="footer__logo">NORD HOME</p>
+                <p class="footer__about">
+                    Декор и аксессуары<br>
+                    для современного дома.
+                </p>
+            </div>
+
+            <nav class="footer__column" aria-labelledby="footer-shop-title">
+                <h2 class="footer__column-title" id="footer-shop-title">Магазин</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="new.html">Новинки</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="popular.html">Популярное</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="sale.html">Акции</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__column" aria-labelledby="footer-customers-title">
+                <h2 class="footer__column-title" id="footer-customers-title">Покупателям</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="delivery.html">Доставка</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="payment.html">Оплата</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="return.html">Возврат</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="faq.html">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__column" aria-labelledby="footer-contacts-title">
+                <h2 class="footer__column-title" id="footer-contacts-title">Контакты</h2>
+                <ul class="footer__list footer__list--contacts">
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--phone" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--email" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </li>
+                </ul>
+                <ul class="footer__socials">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="telegram.html">Telegram</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="vk.html">VK</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="instagram.html">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 NORD HOME. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORD HOME — декор и аксессуары для современного дома</title>
+    <meta name="description" content="Декор, текстиль и аксессуары для уютного современного дома. Собранные коллекции, которые легко сочетать между собой.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+
+            <a class="header__logo" href="index.html">
+                <span class="header__logo-name">NORD</span>
+                <span class="header__logo-sub">HOME</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link header__nav-link--active" href="index.html">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="new.html">Новинки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="popular.html">Популярное</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="for-home.html">Для дома</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="about.html">О нас</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a class="header__search" href="search.html">
+                    <span class="header__search-icon" aria-hidden="true">🔍</span>
+                    <span class="header__search-text">Поиск</span>
+                </a>
+                <a class="header__favorites" href="favorites.html" aria-label="Избранное">
+                    <span class="header__favorites-icon" aria-hidden="true">♡</span>
+                </a>
+                <a class="header__cart" href="cart.html" aria-label="Корзина">
+                    <span class="header__cart-icon" aria-hidden="true">🛒</span>
+                    <span class="header__cart-count">2</span>
+                </a>
+
+                <button class="header__burger" type="button" aria-label="Открыть меню">
+                    <span class="header__burger-box">
+                        <span class="header__burger-line header__burger-line--top"></span>
+                        <span class="header__burger-line header__burger-line--middle"></span>
+                        <span class="header__burger-line header__burger-line--bottom"></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+    <main class="main">
+        <!-- ================= HERO ================= -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__image">
+                <img src="assets/images/hero.jpg" alt="Уютный интерьер гостиной с декором NORD HOME">
+            </div>
+
+            <div class="hero__overlay" aria-hidden="true"></div>
+
+            <div class="hero__content">
+                <p class="hero__subtitle">ДЕКОР ДЛЯ ДОМА</p>
+                <h1 class="hero__title" id="hero-title">
+                    Создайте пространство,<br>
+                    в которое хочется<br>
+                    возвращаться
+                </h1>
+                <p class="hero__text">
+                    Декор, текстиль и аксессуары для уютного<br>
+                    современного дома. Собранные коллекции,<br>
+                    которые легко сочетать между собой.
+                </p>
+                <a class="hero__button" href="catalog.html">Перейти в каталог →</a>
+                <p class="hero__note">
+                    <span class="hero__note-icon" aria-hidden="true">🚚</span>
+                    Бесплатная доставка от 5 000 ₽
+                </p>
+            </div>
+
+            <div class="hero__slider">
+                <p class="hero__slider-counter">01 / 03</p>
+                <div class="hero__slider-controls">
+                    <button class="hero__slider-button hero__slider-button--prev" type="button" aria-label="Предыдущий слайд">←</button>
+                    <button class="hero__slider-button hero__slider-button--next" type="button" aria-label="Следующий слайд">→</button>
+                </div>
+            </div>
+        </section>
+        <!-- ================= КАТЕГОРИИ ================= -->
+        <section class="categories" aria-labelledby="categories-title">
+            <div class="categories__container">
+                <h2 class="categories__title" id="categories-title">ВСЁ ДЛЯ УЮТНОГО ДОМА</h2>
+
+                <ul class="categories__list">
+                    <li class="categories__item">
+                        <a class="category-card" href="category/candles.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-candles.jpeg" alt="Свечи и ароматические диффузоры">
+                            </span>
+                            <h3 class="category-card__title">Свечи и ароматы</h3>
+                            <p class="category-card__subtitle">Создайте атмосферу</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="categories__item">
+                        <a class="category-card" href="category/decor.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-decor.jpg" alt="Декоративные вазы и статуэтки">
+                            </span>
+                            <h3 class="category-card__title">Декор</h3>
+                            <p class="category-card__subtitle">Детали, которые меняют интерьер</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="categories__item">
+                        <a class="category-card" href="category/lighting.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-lighting.jpg" alt="Настольная лампа с тёплым светом">
+                            </span>
+                            <h3 class="category-card__title">Освещение</h3>
+                            <p class="category-card__subtitle">Теплый свет для дома</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                    <li class="categories__item">
+                        <a class="category-card" href="category/textile.html">
+                            <span class="category-card__image">
+                                <img src="assets/images/category-textile.jpg" alt="Пледы и текстиль для дома">
+                            </span>
+                            <h3 class="category-card__title">Текстиль</h3>
+                            <p class="category-card__subtitle">Мягкость и комфорт</p>
+                            <span class="category-card__arrow" aria-hidden="true">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- ================= ПОПУЛЯРНЫЕ ТОВАРЫ ================= -->
+        <section class="products" aria-labelledby="products-title">
+            <div class="products__container">
+
+                <div class="products__header">
+                    <div class="products__heading">
+                        <p class="products__eyebrow">ХИТЫ ПРОДАЖ</p>
+                        <h2 class="products__title" id="products-title">То, что выбирают чаще всего</h2>
+                    </div>
+                    <a class="products__link-all" href="catalog.html">Весь каталог →</a>
+                </div>
+
+                <ul class="products__list">
+                    <li class="products__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/candle-sever.html">
+                                <img class="product-card__image" src="assets/images/product-candle.jpeg" alt="Свеча «Север»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить свечу «Север» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/candle-sever.html">Свеча «Север»</a>
+                            </h3>
+                            <p class="product-card__price">1 290 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="products__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/vase-minimal.html">
+                                <img class="product-card__image" src="assets/images/product-vase.jpeg" alt="Ваза «Минимал»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить вазу «Минимал» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/vase-minimal.html">Ваза «Минимал»</a>
+                            </h3>
+                            <p class="product-card__price">2 490 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="products__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/lamp-oslo.html">
+                                <img class="product-card__image" src="assets/images/product-lamp.webp" alt="Настольная лампа «Осло»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить лампу «Осло» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/lamp-oslo.html">Настольная лампа «Осло»</a>
+                            </h3>
+                            <p class="product-card__price">4 990 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="products__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/blanket-warm.html">
+                                <img class="product-card__image" src="assets/images/product-blanket.jpeg" alt="Плед «Тепло»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить плед «Тепло» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/blanket-warm.html">Плед «Тепло»</a>
+                            </h3>
+                            <p class="product-card__price">3 290 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- ================= ИМИДЖЕВАЯ СЕКЦИЯ: МАЛЕНЬКИЕ ДЕТАЛИ ================= -->
+        <section class="promo" aria-labelledby="promo-title">
+            <div class="promo__container">
+                <div class="promo__media">
+                    <img class="promo__image" src="assets/images/promo-details.jpeg" alt="Интерьер с декоративными деталями на полках">
+                </div>
+                <div class="promo__content">
+                    <h2 class="promo__title" id="promo-title">
+                        Маленькие детали<br>
+                        создают большую атмосферу
+                    </h2>
+                    <p class="promo__text">
+                        Мы верим, что уют начинается с деталей.<br>
+                        Именно поэтому выбираем предметы, которые<br>
+                        красиво выглядят не только на фотографиях,<br>
+                        но и каждый день работают на атмосферу вашего дома.
+                    </p>
+                    <a class="promo__button" href="collection.html">Смотреть коллекцию →</a>
+                </div>
+            </div>
+        </section>
+        <!-- ================= НОВИНКИ ================= -->
+        <section class="new-arrivals" aria-labelledby="new-arrivals-title">
+            <div class="new-arrivals__container">
+
+                <div class="new-arrivals__header">
+                    <div class="new-arrivals__heading">
+                        <p class="new-arrivals__eyebrow">НОВИНКИ</p>
+                        <h2 class="new-arrivals__title" id="new-arrivals-title">Только что в NORD HOME</h2>
+                    </div>
+                    <div class="new-arrivals__controls">
+                        <button class="new-arrivals__button new-arrivals__button--prev" type="button" aria-label="Предыдущие новинки">←</button>
+                        <button class="new-arrivals__button new-arrivals__button--next" type="button" aria-label="Следующие новинки">→</button>
+                    </div>
+                </div>
+
+                <ul class="new-arrivals__list">
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/candlestick-stone.html">
+                                <img class="product-card__image" src="assets/images/new-candlestick.jpg" alt="Подсвечник «Камень»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить подсвечник «Камень» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/candlestick-stone.html">Подсвечник «Камень»</a>
+                            </h3>
+                            <p class="product-card__price">1 590 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/vase-forma.html">
+                                <img class="product-card__image" src="assets/images/new-vase.webp" alt="Ваза «Форма»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить вазу «Форма» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/vase-forma.html">Ваза «Форма»</a>
+                            </h3>
+                            <p class="product-card__price">2 290 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/diffuser-forest.html">
+                                <img class="product-card__image" src="assets/images/new-diffuser.jpeg" alt="Аромадиффузор «Лес»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить аромадиффузор «Лес» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/diffuser-forest.html">Аромадиффузор «Лес»</a>
+                            </h3>
+                            <p class="product-card__price">1 990 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/blanket-north-wind.html">
+                                <img class="product-card__image" src="assets/images/new-blanket.jpg" alt="Плед «Северный ветер»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить плед «Северный ветер» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/blanket-north-wind.html">Плед «Северный ветер»</a>
+                            </h3>
+                            <p class="product-card__price">3 490 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/lamp-moon.html">
+                                <img class="product-card__image" src="assets/images/new-lamp.jpg" alt="Светильник «Луна»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить светильник «Луна» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/lamp-moon.html">Светильник «Луна»</a>
+                            </h3>
+                            <p class="product-card__price">4 290 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                    <li class="new-arrivals__item">
+                        <article class="product-card">
+                            <a class="product-card__media" href="product/basket-nord.html">
+                                <img class="product-card__image" src="assets/images/new-basket.jpeg" alt="Корзина «Норд»">
+                                <button class="product-card__favorite" type="button" aria-label="Добавить корзину «Норд» в избранное">♡</button>
+                            </a>
+                            <h3 class="product-card__title">
+                                <a class="product-card__link" href="product/basket-nord.html">Корзина «Норд»</a>
+                            </h3>
+                            <p class="product-card__price">2 190 ₽</p>
+                            <button class="product-card__button" type="button">В корзину</button>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- ================= ПРЕИМУЩЕСТВА ================= -->
+        <!-- <section class="advantages" aria-labelledby="advantages-title">
+            <div class="advantages__container">
+
+                <div class="advantages__header">
+                    <h2 class="advantages__title" id="advantages-title">Почему выбирают нас</h2>
+                    <p class="advantages__subtitle">Всё просто — красиво и с заботой</p>
+                </div>
+
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <article class="advantage-card">
+                            <span class="advantage-card__icon" aria-hidden="true">📦</span>
+                            <h3 class="advantage-card__title">Бережная упаковка</h3>
+                            <p class="advantage-card__text">Каждый заказ тщательно упаковываем перед отправкой.</p>
+                        </article>
+                    </li>
+                    <li class="advantages__item">
+                        <article class="advantage-card">
+                            <span class="advantage-card__icon" aria-hidden="true">🚚</span>
+                            <h3 class="advantage-card__title">Доставка по всей России</h3>
+                            <p class="advantage-card__text">Отправляем заказы в города по всей стране.</p>
+                        </article>
+                    </li>
+                    <li class="advantages__item">
+                        <article class="advantage-card">
+                            <span class="advantage-card__icon" aria-hidden="true">✦</span>
+                            <h3 class="advantage-card__title">Проверенное качество</h3>
+                            <p class="advantage-card__text">Выбираем материалы и товары, которые прослужат долго.</p>
+                        </article>
+                    </li>
+                    <li class="advantages__item">
+                        <article class="advantage-card">
+                            <span class="advantage-card__icon" aria-hidden="true">↩</span>
+                            <h3 class="advantage-card__title">14 дней на возврат</h3>
+                            <p class="advantage-card__text">Если товар вам не подошёл, его можно вернуть.</p>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+        </section> -->
+
+        <!-- ================= ИМИДЖЕВАЯ СЕКЦИЯ: АТМОСФЕРА ================= -->
+        <section class="promo-atmosphere" aria-labelledby="promo-atmosphere-title">
+            <div class="promo-atmosphere__media">
+                <img class="promo-atmosphere__image" src="assets/images/promo-atmosphere.jpg" alt="Атмосферный интерьер с мягким светом">
+            </div>
+            <div class="promo-atmosphere__content">
+                <h2 class="promo-atmosphere__title" id="promo-atmosphere-title">
+                    Дом начинается<br>
+                    с атмосферы
+                </h2>
+                <p class="promo-atmosphere__text">
+                    Подберите детали, которые<br>
+                    подчеркнут именно ваш стиль.
+                </p>
+                <a class="promo-atmosphere__button" href="catalog.html">Подобрать декор →</a>
+            </div>
+        </section>
+        <!-- ================= ОТЗЫВЫ ================= -->
+        <section class="reviews" aria-labelledby="reviews-title">
+            <div class="reviews__container">
+
+                <div class="reviews__header">
+                    <div class="reviews__heading">
+                        <p class="reviews__eyebrow">ОТЗЫВЫ</p>
+                        <h2 class="reviews__title" id="reviews-title">Нам доверяют свой дом</h2>
+                    </div>
+                    <div class="reviews__controls">
+                        <button class="reviews__button reviews__button--prev" type="button" aria-label="Предыдущий отзыв">←</button>
+                        <button class="reviews__button reviews__button--next" type="button" aria-label="Следующий отзыв">→</button>
+                    </div>
+                </div>
+
+                <ul class="reviews__list">
+                    <li class="reviews__item">
+                        <article class="review-card">
+                            <div class="review-card__header">
+                                <img class="review-card__avatar" src="assets/icons/avatar.png" alt="Фотография Анны М.">
+                                <div class="review-card__meta">
+                                    <p class="review-card__name">Анна М.</p>
+                                    <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                                </div>
+                            </div>
+                            <p class="review-card__text">Заказывала вазу и свечи. Всё пришло очень красиво упаковано, а в интерьере выглядит ещё лучше.</p>
+                            <time class="review-card__date" datetime="2025-05-12">12 мая 2025</time>
+                        </article>
+                    </li>
+                    <li class="reviews__item">
+                        <article class="review-card">
+                            <div class="review-card__header">
+                                <img class="review-card__avatar" src="assets/icons/avatar.png" alt="Фотография Екатерины П.">
+                                <div class="review-card__meta">
+                                    <p class="review-card__name">Екатерина П.</p>
+                                    <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                                </div>
+                            </div>
+                            <p class="review-card__text">Очень понравился магазин. Спокойный дизайн, хорошие фотографии и быстрая доставка.</p>
+                            <time class="review-card__date" datetime="2025-04-03">3 апреля 2025</time>
+                        </article>
+                    </li>
+                    <li class="reviews__item">
+                        <article class="review-card">
+                            <div class="review-card__header">
+                                <img class="review-card__avatar" src="assets/icons/avatar.png" alt="Фотография Максима К.">
+                                <div class="review-card__meta">
+                                    <p class="review-card__name">Максим К.</p>
+                                    <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                                </div>
+                            </div>
+                            <p class="review-card__text">Брал светильник в подарок. Качество отличное, упаковка тоже на высоте.</p>
+                            <time class="review-card__date" datetime="2025-03-21">21 марта 2025</time>
+                        </article>
+                    </li>
+                    <li class="reviews__item">
+                        <article class="review-card">
+                            <div class="review-card__header">
+                                <img class="review-card__avatar" src="assets/icons/avatar.png" alt="Фотография Максима К.">
+                                <div class="review-card__meta">
+                                    <p class="review-card__name">Максим К.</p>
+                                    <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                                </div>
+                            </div>
+                            <p class="review-card__text">Брал светильник в подарок. Качество отличное, упаковка тоже на высоте.</p>
+                            <time class="review-card__date" datetime="2025-03-21">21 марта 2025</time>
+                        </article>
+                    </li>
+                    <li class="reviews__item">
+                        <article class="review-card">
+                            <div class="review-card__header">
+                                <img class="review-card__avatar" src="assets/icons/avatar.png" alt="Фотография Максима К.">
+                                <div class="review-card__meta">
+                                    <p class="review-card__name">Максим К.</p>
+                                    <p class="review-card__rating" aria-label="Оценка 5 из 5">★★★★★</p>
+                                </div>
+                            </div>
+                            <p class="review-card__text">Брал светильник в подарок. Качество отличное, упаковка тоже на высоте.</p>
+                            <time class="review-card__date" datetime="2025-03-21">21 марта 2025</time>
+                        </article>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- ================= ГАЛЕРЕЯ ================= -->
+        <section class="gallery" aria-labelledby="gallery-title">
+            <div class="gallery__container">
+
+                <div class="gallery__header">
+                    <div class="gallery__heading">
+                        <p class="gallery__eyebrow">ГАЛЕРЕЯ</p>
+                        <h2 class="gallery__title" id="gallery-title">NORD HOME в вашем доме</h2>
+                    </div>
+                    <a class="gallery__link-all" href="gallery.html">Смотреть все →</a>
+                </div>
+
+                <ul class="gallery__list">
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-1.jpeg" alt="Гостиная с декором NORD HOME">
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-2.jpg" alt="Свечи NORD HOME в интерьере">
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-3.jpeg" alt="Интерьер столовой с декором">
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-4.jpeg" alt="Спальня с текстилем NORD HOME">
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-5.jpeg" alt="Декор и растения в интерьере">
+                        </a>
+                    </li>
+                    <li class="gallery__item">
+                        <a class="gallery-card" href="gallery.html">
+                            <img class="gallery-card__image" src="assets/images/gallery-6.jpg" alt="Уютная гостиная NORD HOME">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+        <!-- ================= ПОДПИСКА ================= -->
+        <section class="subscription" aria-labelledby="subscription-title">
+            <div class="subscription__container">
+                <div class="subscription__content">
+                    <h2 class="subscription__title" id="subscription-title">Вдохновение для вашего дома</h2>
+                    <p class="subscription__text">
+                        Получайте новые коллекции, идеи для интерьера<br>
+                        и специальные предложения.
+                    </p>
+                </div>
+
+                <form class="subscription__form" action="#" method="post">
+                    <label class="subscription__label" for="subscription-email">Ваш email</label>
+                    <input class="subscription__input" type="email" id="subscription-email" name="email" placeholder="Ваш email" required>
+                    <button class="subscription__button" type="submit">Подписаться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <p class="footer__logo">NORD HOME</p>
+                <p class="footer__about">
+                    Декор и аксессуары<br>
+                    для современного дома.
+                </p>
+            </div>
+
+            <nav class="footer__column" aria-labelledby="footer-shop-title">
+                <h2 class="footer__column-title" id="footer-shop-title">Магазин</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="new.html">Новинки</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="popular.html">Популярное</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="sale.html">Акции</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__column" aria-labelledby="footer-customers-title">
+                <h2 class="footer__column-title" id="footer-customers-title">Покупателям</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="delivery.html">Доставка</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="payment.html">Оплата</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="return.html">Возврат</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="faq.html">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__column" aria-labelledby="footer-contacts-title">
+                <h2 class="footer__column-title" id="footer-contacts-title">Контакты</h2>
+                <ul class="footer__list footer__list--contacts">
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--phone" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--email" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </li>
+                </ul>
+                <ul class="footer__socials">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="telegram.html">Telegram</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="vk.html">VK</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="instagram.html">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 NORD HOME. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

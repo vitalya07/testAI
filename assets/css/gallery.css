@@ -1,0 +1,437 @@
+/* ========================================
+   NORD HOME — ГАЛЕРЕЯ
+   Все правила ограничены пространством .gallery
+   ======================================== */
+
+.gallery {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 70px 0 80px;
+}
+
+.gallery *,
+.gallery *::before,
+.gallery *::after {
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.gallery__container {
+    width: 100%;
+    max-width: 1280px;
+
+    margin-inline: auto;
+
+    padding-inline: 44px;
+}
+
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.gallery__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    margin-bottom: 32px;
+}
+
+.gallery__heading {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   EYEBROW
+   ======================================== */
+
+.gallery__eyebrow {
+    margin: 0 0 10px;
+
+    color: #8a8177;
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   TITLE
+   ======================================== */
+
+.gallery__title {
+    margin: 0;
+
+    color: #2f2a26;
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+}
+
+
+/* ========================================
+   LINK "СМОТРЕТЬ ВСЕ"
+   ======================================== */
+
+.gallery__link-all {
+    display: inline-block;
+    flex-shrink: 0;
+
+    padding-bottom: 3px;
+
+    color: #5f5a54;
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.2;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: color 0.25s ease;
+}
+
+.gallery__link-all:hover {
+    color: #181818;
+}
+
+.gallery__link-all:focus-visible {
+    outline: 2px solid #8a7258;
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.gallery__link-all:active {
+    color: #8a7258;
+}
+
+
+/* ========================================
+   GRID
+   ======================================== */
+
+.gallery__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.gallery__item {
+    display: flex;
+    min-width: 0;
+}
+
+
+/* ========================================
+   CARD
+   ======================================== */
+
+.gallery-card {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+
+    border-radius: 5px;
+
+    background: #f0ece7;
+
+    text-decoration: none;
+
+    transition: box-shadow 0.4s ease;
+}
+
+.gallery-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(24, 20, 16, 0);
+
+    pointer-events: none;
+
+    transition: background 0.4s ease;
+}
+
+.gallery-card:hover {
+    box-shadow: 0 12px 30px rgba(47, 42, 38, 0.1);
+}
+
+.gallery-card:hover::after {
+    background: rgba(24, 20, 16, 0.06);
+}
+
+.gallery-card:focus-visible {
+    outline: 2px solid #8a7258;
+    outline-offset: 3px;
+}
+
+.gallery-card:active {
+    box-shadow: 0 6px 18px rgba(47, 42, 38, 0.08);
+}
+
+
+/* ========================================
+   IMAGE
+   ======================================== */
+
+.gallery-card__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-card__image {
+    transform: scale(1.03);
+}
+
+
+/* ========================================
+   1199px
+   ======================================== */
+
+@media (max-width: 1199px) {
+
+    .gallery {
+        padding: 60px 0 70px;
+    }
+
+    .gallery__container {
+        padding-inline: 30px;
+    }
+
+    .gallery__header {
+        margin-bottom: 28px;
+    }
+
+    .gallery__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .gallery-card__image {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+
+/* ========================================
+   991px
+   ======================================== */
+
+@media (max-width: 991px) {
+
+    .gallery {
+        padding: 54px 0 62px;
+    }
+
+    .gallery__container {
+        padding-inline: 26px;
+    }
+
+    .gallery__eyebrow {
+        font-size: 10.5px;
+    }
+
+    .gallery__link-all {
+        font-size: 12.5px;
+    }
+}
+
+
+/* ========================================
+   767px — одна колонка
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .gallery {
+        padding: 46px 0 54px;
+    }
+
+    .gallery__container {
+        padding-inline: 22px;
+    }
+
+    .gallery__header {
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .gallery__eyebrow {
+        margin-bottom: 8px;
+        font-size: 10px;
+    }
+
+    .gallery__list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .gallery-card__image {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+
+/* ========================================
+   600px
+   ======================================== */
+
+@media (max-width: 600px) {
+
+    .gallery {
+        padding: 42px 0 48px;
+    }
+
+    .gallery__container {
+        padding-inline: 20px;
+    }
+
+    .gallery__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .gallery__link-all {
+        font-size: 12px;
+    }
+
+    .gallery__list {
+        gap: 13px;
+    }
+}
+
+
+/* ========================================
+   480px
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .gallery {
+        padding: 38px 0 44px;
+    }
+
+    .gallery__container {
+        padding-inline: 18px;
+    }
+
+    .gallery__header {
+        margin-bottom: 20px;
+    }
+
+    .gallery__eyebrow {
+        font-size: 9.5px;
+        letter-spacing: 0.14em;
+    }
+
+    .gallery__list {
+        gap: 12px;
+    }
+
+    .gallery-card__image {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+
+/* ========================================
+   375px
+   ======================================== */
+
+@media (max-width: 375px) {
+
+    .gallery {
+        padding: 34px 0 40px;
+    }
+
+    .gallery__container {
+        padding-inline: 16px;
+    }
+
+    .gallery__link-all {
+        font-size: 11.5px;
+    }
+
+    .gallery__list {
+        gap: 11px;
+    }
+}
+
+
+/* ========================================
+   320px
+   ======================================== */
+
+@media (max-width: 320px) {
+
+    .gallery {
+        padding: 30px 0 36px;
+    }
+
+    .gallery__container {
+        padding-inline: 14px;
+    }
+
+    .gallery__header {
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .gallery__eyebrow {
+        font-size: 9px;
+    }
+
+    .gallery__link-all {
+        font-size: 11px;
+    }
+
+    .gallery__list {
+        gap: 10px;
+    }
+
+    .gallery-card__image {
+        aspect-ratio: 5 / 4;
+    }
+}

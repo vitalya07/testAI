@@ -1,0 +1,387 @@
+/* ========================================
+   NORD HOME — «Дом начинается с атмосферы»
+   ======================================== */
+
+.promo-atmosphere {
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 70px auto 80px;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+}
+
+.promo-atmosphere *,
+.promo-atmosphere *::before,
+.promo-atmosphere *::after {
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   IMAGE
+   ======================================== */
+
+.promo-atmosphere__media {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #f0ece7;
+}
+
+.promo-atmosphere__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 420px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.promo-atmosphere__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding: 60px;
+
+    background: #f3eee7;
+}
+
+.promo-atmosphere__title {
+    margin: 0;
+
+    color: #2f2a26;
+    font-size: 44px;
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.promo-atmosphere__text {
+    margin: 24px 0 0;
+
+    color: #6f6861;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.promo-atmosphere__button {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin-top: 30px;
+    padding: 14px 24px;
+
+    border: 1px solid #2f2a26;
+    border-radius: 4px;
+
+    background: #2f2a26;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.promo-atmosphere__button:hover {
+    background: #ffffff;
+    border-color: #2f2a26;
+    color: #2f2a26;
+}
+
+
+/* ========================================
+   1199px
+   ======================================== */
+
+@media (max-width: 1199px) {
+
+    .promo-atmosphere {
+        grid-template-columns: 1fr 1fr;
+        margin: 60px 24px 68px;
+    }
+
+    .promo-atmosphere__image {
+        min-height: 380px;
+    }
+
+    .promo-atmosphere__content {
+        padding: 46px 40px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 37px;
+    }
+
+    .promo-atmosphere__text {
+        margin-top: 20px;
+        font-size: 15px;
+    }
+
+    .promo-atmosphere__button {
+        margin-top: 26px;
+        padding: 13px 22px;
+    }
+}
+
+
+/* ========================================
+   991px
+   ======================================== */
+
+@media (max-width: 991px) {
+
+    .promo-atmosphere {
+        margin: 54px 20px 60px;
+    }
+
+    .promo-atmosphere__image {
+        min-height: 340px;
+    }
+
+    .promo-atmosphere__content {
+        padding: 38px 32px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 33px;
+    }
+
+    .promo-atmosphere__text {
+        font-size: 14.5px;
+    }
+}
+
+
+/* ========================================
+   767px
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .promo-atmosphere {
+        grid-template-columns: minmax(0, 1fr);
+
+        margin: 46px 18px 52px;
+    }
+
+    .promo-atmosphere__media {
+        aspect-ratio: 16 / 10;
+    }
+
+    .promo-atmosphere__image {
+        min-height: 0;
+        height: 100%;
+
+        aspect-ratio: auto;
+    }
+
+    .promo-atmosphere__content {
+        padding: 34px 28px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 32px;
+    }
+
+    .promo-atmosphere__text {
+        margin-top: 18px;
+        font-size: 14.5px;
+    }
+
+    .promo-atmosphere__button {
+        margin-top: 24px;
+        padding: 13px 20px;
+    }
+}
+
+
+/* ========================================
+   575px
+   ======================================== */
+
+@media (max-width: 575px) {
+
+    .promo-atmosphere {
+        margin: 40px 16px 46px;
+    }
+
+    .promo-atmosphere__media {
+        aspect-ratio: 16 / 11;
+    }
+
+    .promo-atmosphere__content {
+        padding: 32px 26px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 30px;
+    }
+
+    .promo-atmosphere__text {
+        font-size: 14px;
+    }
+
+    .promo-atmosphere__button {
+        margin-top: 22px;
+        padding: 12px 20px;
+    }
+}
+
+
+/* ========================================
+   480px
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .promo-atmosphere {
+        margin: 36px 14px 42px;
+    }
+
+    .promo-atmosphere__media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .promo-atmosphere__content {
+        padding: 28px 24px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 30px;
+    }
+
+    .promo-atmosphere__text {
+        margin-top: 16px;
+        font-size: 14px;
+    }
+
+    .promo-atmosphere__button {
+        margin-top: 20px;
+        padding: 12px 18px;
+        font-size: 12.5px;
+    }
+}
+
+
+/* ========================================
+   375px
+   ======================================== */
+
+@media (max-width: 375px) {
+
+    .promo-atmosphere {
+        margin: 32px 12px 38px;
+    }
+
+    .promo-atmosphere__content {
+        padding: 26px 20px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 27px;
+    }
+
+    .promo-atmosphere__text {
+        font-size: 13.5px;
+    }
+
+    .promo-atmosphere__button {
+        padding: 11px 18px;
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   360px
+   ======================================== */
+
+@media (max-width: 360px) {
+
+    .promo-atmosphere {
+        margin-right: 11px;
+        margin-left: 11px;
+    }
+
+    .promo-atmosphere__content {
+        padding: 24px 18px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 26px;
+    }
+
+    .promo-atmosphere__text {
+        font-size: 13.5px;
+    }
+}
+
+
+/* ========================================
+   320px
+   ======================================== */
+
+@media (max-width: 320px) {
+
+    .promo-atmosphere {
+        margin: 28px 10px 34px;
+    }
+
+    .promo-atmosphere__media {
+        aspect-ratio: 1 / 1;
+    }
+
+    .promo-atmosphere__content {
+        padding: 22px 16px;
+    }
+
+    .promo-atmosphere__title {
+        font-size: 24px;
+        line-height: 1.15;
+    }
+
+    .promo-atmosphere__text {
+        margin-top: 14px;
+        font-size: 13px;
+    }
+
+    .promo-atmosphere__button {
+        margin-top: 18px;
+        padding: 11px 16px;
+        font-size: 11.5px;
+    }
+}

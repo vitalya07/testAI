@@ -1,0 +1,362 @@
+/* ========================================
+   NORD HOME — СЕКЦИЯ ПОСЛЕ «ХИТЫ ПРОДАЖ»
+   Имиджевый блок «Маленькие детали» (.promo)
+   ======================================== */
+
+.promo {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 70px 0;
+}
+
+.promo *,
+.promo *::before,
+.promo *::after {
+    box-sizing: border-box;
+}
+
+.promo__container {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+
+    gap: 56px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 0 32px;
+}
+
+
+/* ========================================
+   IMAGE
+   ======================================== */
+
+.promo__media {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #f0ece7;
+}
+
+.promo__image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    aspect-ratio: 5 / 4;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+.promo__media:hover .promo__image {
+    transform: scale(1.02);
+}
+
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.promo__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.promo__title {
+    margin: 0;
+
+    color: #2f2a26;
+    font-size: 32px;
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.promo__text {
+    margin: 20px 0 0;
+
+    color: #6f6861;
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.promo__button {
+    display: inline-block;
+
+    margin-top: 28px;
+    padding: 13px 24px;
+
+    border: 1px solid #8a7258;
+    border-radius: 4px;
+
+    background: #ffffff;
+    color: #8a7258;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.promo__button:hover {
+    background: #8a7258;
+    border-color: #8a7258;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   1199px
+   ======================================== */
+
+@media (max-width: 1199px) {
+
+    .promo {
+        padding: 60px 0;
+    }
+
+    .promo__container {
+        gap: 40px;
+        padding: 0 24px;
+    }
+
+    .promo__title {
+        font-size: 28px;
+    }
+
+    .promo__text {
+        margin-top: 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   991px
+   ======================================== */
+
+@media (max-width: 991px) {
+
+    .promo {
+        padding: 54px 0;
+    }
+
+    .promo__container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .promo__title {
+        font-size: 26px;
+    }
+
+    .promo__text {
+        font-size: 14px;
+    }
+
+    .promo__image {
+        aspect-ratio: 16 / 10;
+    }
+}
+
+
+/* ========================================
+   767px
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .promo {
+        padding: 44px 0;
+    }
+
+    .promo__container {
+        gap: 24px;
+        padding: 0 18px;
+    }
+
+    .promo__title {
+        font-size: 24px;
+        line-height: 1.22;
+    }
+
+    .promo__text {
+        margin-top: 14px;
+        font-size: 14px;
+    }
+
+    .promo__button {
+        margin-top: 22px;
+        padding: 12px 20px;
+    }
+
+    .promo__image {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+
+/* ========================================
+   575px
+   ======================================== */
+
+@media (max-width: 575px) {
+
+    .promo {
+        padding: 40px 0;
+    }
+
+    .promo__container {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .promo__title {
+        font-size: 23px;
+    }
+
+    .promo__text {
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    .promo__button {
+        margin-top: 20px;
+        padding: 11px 18px;
+        font-size: 12.5px;
+    }
+}
+
+
+/* ========================================
+   480px
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .promo {
+        padding: 36px 0;
+    }
+
+    .promo__container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+        padding: 0 14px;
+    }
+
+    .promo__title {
+        font-size: 22px;
+    }
+
+    .promo__text {
+        font-size: 13px;
+    }
+}
+
+
+/* ========================================
+   375px
+   ======================================== */
+
+@media (max-width: 375px) {
+
+    .promo {
+        padding: 32px 0;
+    }
+
+    .promo__container {
+        gap: 16px;
+        padding: 0 12px;
+    }
+
+    .promo__title {
+        font-size: 21px;
+    }
+
+    .promo__text {
+        font-size: 12.5px;
+    }
+
+    .promo__button {
+        padding: 11px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   360px
+   ======================================== */
+
+@media (max-width: 360px) {
+
+    .promo__container {
+        padding: 0 11px;
+    }
+
+    .promo__title {
+        font-size: 20px;
+    }
+}
+
+
+/* ========================================
+   320px
+   ======================================== */
+
+@media (max-width: 320px) {
+
+    .promo {
+        padding: 28px 0;
+    }
+
+    .promo__container {
+        gap: 14px;
+        padding: 0 10px;
+    }
+
+    .promo__title {
+        font-size: 19px;
+        line-height: 1.25;
+    }
+
+    .promo__text {
+        font-size: 12.5px;
+    }
+
+    .promo__button {
+        padding: 10px 15px;
+        font-size: 11.5px;
+    }
+}

@@ -1,0 +1,472 @@
+/* ========================================
+   NORD HOME — ПОДПИСКА НА РАССЫЛКУ
+   Все правила ограничены пространством .subscription
+   ======================================== */
+
+.subscription {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    background: #f5f1ec;
+
+    padding: 64px 0;
+}
+
+.subscription *,
+.subscription *::before,
+.subscription *::after {
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.subscription__container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    align-items: center;
+
+    gap: 56px;
+
+    width: 100%;
+    max-width: 1280px;
+
+    margin-inline: auto;
+
+    padding-inline: 44px;
+}
+
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.subscription__content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.subscription__title {
+    margin: 0;
+
+    color: #2f2a26;
+    font-size: clamp(24px, 2.2vw, 30px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.22;
+
+    overflow-wrap: break-word;
+}
+
+.subscription__text {
+    max-width: 420px;
+    margin: 16px 0 0;
+
+    color: #6f6861;
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   FORM
+   ======================================== */
+
+.subscription__form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   LABEL
+   ======================================== */
+
+.subscription__label {
+    grid-column: 1 / -1;
+
+    margin-bottom: 2px;
+
+    color: #2f2a26;
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.3;
+}
+
+
+/* ========================================
+   INPUT
+   ======================================== */
+
+.subscription__input {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 100%;
+    min-width: 0;
+
+    height: 48px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba(47, 42, 38, 0.18);
+    border-radius: 4px;
+
+    background: #ffffff;
+    color: #2f2a26;
+
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.2;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.subscription__input::placeholder {
+    color: #9b938c;
+    opacity: 1;
+}
+
+.subscription__input:hover {
+    border-color: rgba(47, 42, 38, 0.3);
+}
+
+.subscription__input:focus {
+    border-color: #8a7258;
+    box-shadow: 0 0 0 3px rgba(138, 114, 88, 0.12);
+
+    outline: none;
+}
+
+.subscription__input:focus-visible {
+    border-color: #8a7258;
+    box-shadow: 0 0 0 3px rgba(138, 114, 88, 0.18);
+
+    outline: none;
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.subscription__button {
+    grid-column: 2;
+    grid-row: 2;
+
+    height: 48px;
+
+    padding: 12px 24px;
+
+    border: 1px solid #8a7258;
+    border-radius: 4px;
+
+    background: #8a7258;
+    color: #ffffff;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+
+    white-space: nowrap;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.1s ease;
+}
+
+.subscription__button:hover {
+    background: #77624a;
+    border-color: #77624a;
+    color: #ffffff;
+}
+
+.subscription__button:active {
+    background: #6d5a44;
+    border-color: #6d5a44;
+
+    transform: translateY(1px);
+}
+
+.subscription__button:focus-visible {
+    outline: 2px solid #2f2a26;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   1199px
+   ======================================== */
+
+@media (max-width: 1199px) {
+
+    .subscription {
+        padding: 56px 0;
+    }
+
+    .subscription__container {
+        gap: 40px;
+        padding-inline: 32px;
+    }
+
+    .subscription__text {
+        font-size: 14.5px;
+    }
+
+    .subscription__button {
+        padding: 12px 20px;
+    }
+}
+
+
+/* ========================================
+   991px
+   ======================================== */
+
+@media (max-width: 991px) {
+
+    .subscription {
+        padding: 50px 0;
+    }
+
+    .subscription__container {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 32px;
+        padding-inline: 28px;
+    }
+
+    .subscription__text {
+        margin-top: 14px;
+        font-size: 14px;
+    }
+}
+
+
+/* ========================================
+   900px — форма переходит под текст
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .subscription__container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding-inline: 24px;
+    }
+
+    .subscription__text {
+        max-width: 520px;
+        font-size: 14.5px;
+    }
+}
+
+
+/* ========================================
+   767px — input и button вертикально
+   ======================================== */
+
+@media (max-width: 767px) {
+
+    .subscription {
+        padding: 44px 0;
+    }
+
+    .subscription__container {
+        gap: 24px;
+        padding-inline: 20px;
+    }
+
+    .subscription__text {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .subscription__form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .subscription__label {
+        margin-bottom: 0;
+    }
+
+    .subscription__input,
+    .subscription__button {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .subscription__input,
+    .subscription__button {
+        width: 100%;
+    }
+
+    .subscription__button {
+        margin-top: 4px;
+    }
+}
+
+
+/* ========================================
+   600px
+   ======================================== */
+
+@media (max-width: 600px) {
+
+    .subscription {
+        padding: 40px 0;
+    }
+
+    .subscription__container {
+        gap: 22px;
+        padding-inline: 20px;
+    }
+
+    .subscription__text {
+        font-size: 13.5px;
+    }
+
+    .subscription__input {
+        height: 46px;
+        padding: 13px 14px;
+        font-size: 13.5px;
+    }
+
+    .subscription__button {
+        height: 46px;
+        padding: 12px 18px;
+        font-size: 12.5px;
+    }
+}
+
+
+/* ========================================
+   480px
+   ======================================== */
+
+@media (max-width: 480px) {
+
+    .subscription {
+        padding: 36px 0;
+    }
+
+    .subscription__container {
+        gap: 20px;
+        padding-inline: 18px;
+    }
+
+    .subscription__title {
+        font-size: 22px;
+    }
+
+    .subscription__text {
+        font-size: 13px;
+    }
+
+    .subscription__label {
+        font-size: 11.5px;
+    }
+}
+
+
+/* ========================================
+   375px
+   ======================================== */
+
+@media (max-width: 375px) {
+
+    .subscription {
+        padding: 32px 0;
+    }
+
+    .subscription__container {
+        gap: 18px;
+        padding-inline: 16px;
+    }
+
+    .subscription__title {
+        font-size: 20px;
+    }
+
+    .subscription__text {
+        font-size: 12.5px;
+    }
+
+    .subscription__input {
+        height: 44px;
+        padding: 12px 13px;
+        font-size: 13px;
+    }
+
+    .subscription__button {
+        height: 44px;
+        padding: 12px 16px;
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   320px
+   ======================================== */
+
+@media (max-width: 320px) {
+
+    .subscription {
+        padding: 28px 0;
+    }
+
+    .subscription__container {
+        gap: 16px;
+        padding-inline: 14px;
+    }
+
+    .subscription__title {
+        font-size: 19px;
+        line-height: 1.25;
+    }
+
+    .subscription__text {
+        font-size: 12.5px;
+        line-height: 1.55;
+    }
+
+    .subscription__label {
+        font-size: 11px;
+    }
+
+    .subscription__input {
+        height: 42px;
+        padding: 11px 12px;
+        font-size: 12.5px;
+    }
+
+    .subscription__button {
+        height: 42px;
+        padding: 11px 14px;
+        font-size: 11.5px;
+    }
+}
