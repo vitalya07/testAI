@@ -93,7 +93,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return {
             item,
-            id: id || getUrl(card) || card.textContent.trim(),
+            /* Ключ товара — ссылка на карточку: она
+               одинакова на главной и в новинках,
+               поэтому избранное и корзина совпадают.
+               data-id используется только как запасной */
+            id: getUrl(card) || id || card.textContent.trim(),
             url: getUrl(card),
             title: link
                 ? link.textContent.trim()
@@ -211,8 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
             countValue.textContent = String(count);
         }
 
+        /* Счётчик — вложенный span, поэтому textContent
+           родителя удалил бы его. Меняем слово только
+           в последнем текстовом узле, span сохраняем. */
         if (countText) {
-            countText.textContent = 'Найдено ' + count + ' ' + getProductWord(count);
+            const word = getProductWord(count);
+            const nodes = Array.prototype.filter.call(
+                countText.childNodes,
+                (node) => node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== ''
+            );
+
+            if (nodes.length) {
+                nodes[nodes.length - 1].nodeValue = ' ' + word;
+            }
         }
     }
 
@@ -293,13 +308,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 sorted.sort((a, b) => a.title.localeCompare(b.title, 'ru'));
                 break;
 
+            /* При равных признаках порядок не меняем —
+               иначе «По популярности» переворачивает
+               исходный порядок из разметки */
             case 'new':
-                sorted.sort((a, b) => (b.isNew - a.isNew) || (b.order - a.order));
+                sorted.sort((a, b) => (b.isNew - a.isNew) || (a.order - b.order));
                 break;
 
             case 'popular':
             default:
-                sorted.sort((a, b) => (b.isPopular - a.isPopular) || (b.order - a.order));
+                sorted.sort((a, b) => (b.isPopular - a.isPopular) || (a.order - b.order));
                 break;
         }
 
@@ -313,10 +331,29 @@ document.addEventListener('DOMContentLoaded', () => {
        элементы списка.
        ======================================== */
 
+    /** Список id товаров — для сопоставления с текущей страницей */
+    function idsOf(products) {
+        return products.map((product) => product.id);
+    }
+
+    /**
+     * Показывает или прячет карточку.
+     *
+     * Одного атрибута hidden мало: у .catalog__item в CSS
+     * задано display:flex, а авторское правило сильнее
+     * браузерного [hidden] { display:none }. Поэтому
+     * display дублируется инлайном, иначе отфильтрованные
+     * товары остаются на экране и сортировка выглядит
+     * сломанной.
+     */
+    function setItemVisible(item, isVisible) {
+        item.hidden = !isVisible;
+        item.style.display = isVisible ? '' : 'none';
+        item.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+    }
+
     function renderProducts() {
         const sorted = sortProducts(visibleProducts);
-
-        sorted.forEach((product) => list.appendChild(product.item));
 
         const totalPages = Math.max(Math.ceil(sorted.length / PER_PAGE), 1);
 
@@ -326,14 +363,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const start = (state.page - 1) * PER_PAGE;
         const pageProducts = sorted.slice(start, start + PER_PAGE);
+        const pageIds = idsOf(pageProducts);
 
-        const pageIds = pageProducts.map((product) => product.id);
+        /* Переставляем в DOM ВСЕ карточки, а не только
+           отфильтрованные. Иначе скрытые товары остаются
+           в начале списка и портят порядок отсортированных. */
+        const visibleIds = idsOf(visibleProducts);
+        const reordered = sorted.concat(
+            allProducts.filter((product) => visibleIds.indexOf(product.id) === -1)
+        );
+
+        reordered.forEach((product) => list.appendChild(product.item));
 
         allProducts.forEach((product) => {
-            const onPage = pageIds.indexOf(product.id) !== -1;
-
-            product.item.hidden = !onPage;
-            product.item.setAttribute('aria-hidden', onPage ? 'false' : 'true');
+            setItemVisible(product.item, pageIds.indexOf(product.id) !== -1);
         });
 
         toggleEmptyState(sorted.length === 0);
@@ -727,16 +770,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function closeMobileFilters() {
-        if (!filtersToggle || !filtersPanel) {
+        if (!filtersToggle) {
             return;
         }
 
         filtersToggle.checked = false;
-        filtersPanel.setAttribute('aria-hidden', 'true');
-
-        if (filtersToggleLabel) {
-            filtersToggleLabel.setAttribute('aria-expanded', 'false');
-        }
+        syncMobileFilters(false);
     }
 
     /* ========================================
@@ -963,8 +1002,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const willOpen = !filtersToggle.checked;
 
         filtersToggle.checked = willOpen;
-        filtersPanel.setAttribute('aria-hidden', willOpen ? 'false' : 'true');
-        filtersToggleLabel.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        syncMobileFilters(willOpen);
+    }
+
+    function syncMobileFilters(isOpen) {
+        const shouldOpen = Boolean(isOpen);
+
+        if (filtersPanel) {
+            filtersPanel.classList.toggle('catalog__filters--open', shouldOpen);
+
+            /* aria-hidden держим только на мобильных:
+               на десктопе панель всегда раскрыта */
+            if (isMobileFilters()) {
+                filtersPanel.setAttribute('aria-hidden', shouldOpen ? 'false' : 'true');
+            } else {
+                filtersPanel.removeAttribute('aria-hidden');
+            }
+        }
+
+        if (filtersToggleLabel) {
+            filtersToggleLabel.setAttribute(
+                'aria-expanded',
+                shouldOpen ? 'true' : 'false'
+            );
+        }
     }
 
     function handleKeydown(event) {
@@ -977,8 +1038,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleResize() {
         /* При переходе на десктоп панель должна быть
            открыта всегда, поэтому снимаем мобильный флаг */
-        if (!isMobileFilters() && filtersPanel) {
-            filtersPanel.removeAttribute('aria-hidden');
+        if (!isMobileFilters()) {
+            syncMobileFilters(true);
+        } else if (filtersToggle) {
+            syncMobileFilters(filtersToggle.checked);
         }
     }
 
@@ -992,13 +1055,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         readUrlState();
 
-        if (filtersPanel) {
-            filtersPanel.removeAttribute('aria-hidden');
-        }
-
-        if (filtersToggleLabel) {
-            filtersToggleLabel.setAttribute('aria-expanded', 'false');
-        }
+        /* На десктопе панель раскрыта всегда,
+           на мобильных — по состоянию чекбокса */
+        syncMobileFilters(isMobileFilters() ? Boolean(filtersToggle && filtersToggle.checked) : true);
 
         colorLinks.forEach((link) => {
             link.setAttribute('role', 'button');
@@ -1030,14 +1089,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (filtersToggle) {
             filtersToggle.addEventListener('change', () => {
-                filtersPanel.setAttribute(
-                    'aria-hidden',
-                    filtersToggle.checked ? 'false' : 'true'
-                );
-                filtersToggleLabel.setAttribute(
-                    'aria-expanded',
-                    filtersToggle.checked ? 'true' : 'false'
-                );
+                syncMobileFilters(filtersToggle.checked);
             });
         }
 

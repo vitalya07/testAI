@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новинки — новые предметы для дома | NORD HOME</title>
+    <meta name="description" content="Новинки NORD HOME: свежие свечи, вазы, светильники и пледы, которые уже появились в коллекции. Подборка новых предметов для уютного современного дома.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+
+            <a class="header__logo" href="index.html">
+                <span class="header__logo-name">NORD</span>
+                <span class="header__logo-sub">HOME</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link header__nav-link--active" href="new.html" aria-current="page">Новинки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="popular.html">Популярное</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="home.html">Для дома</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="about.html">О нас</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a class="header__search" href="search.html">
+                    <span class="header__search-icon" aria-hidden="true">🔍</span>
+                    <span class="header__search-text">Поиск</span>
+                </a>
+                <a class="header__favorites" href="favorites.html" aria-label="Избранное">
+                    <span class="header__favorites-icon" aria-hidden="true">♡</span>
+                </a>
+                <a class="header__cart" href="cart.html" aria-label="Корзина">
+                    <span class="header__cart-icon" aria-hidden="true">🛒</span>
+                    <span class="header__cart-count">2</span>
+                </a>
+
+                <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header__burger-box">
+                        <span class="header__burger-line header__burger-line--top"></span>
+                        <span class="header__burger-line header__burger-line--middle"></span>
+                        <span class="header__burger-line header__burger-line--bottom"></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ================= PAGE INTRO ================= -->
+        <section class="new-intro" aria-labelledby="new-intro-title">
+            <div class="new-intro__container">
+
+                <nav class="new-intro__breadcrumbs" aria-label="Хлебные крошки">
+                    <ol class="new-intro__breadcrumb-list">
+                        <li class="new-intro__breadcrumb-item">
+                            <a class="new-intro__breadcrumb-link" href="index.html">Главная</a>
+                        </li>
+                        <li class="new-intro__breadcrumb-item" aria-current="page">Новинки</li>
+                    </ol>
+                </nav>
+
+                <div class="new-intro__content">
+                    <div class="new-intro__text">
+                        <p class="new-intro__eyebrow">НОВЫЕ ПОСТУПЛЕНИЯ</p>
+                        <h1 class="new-intro__title" id="new-intro-title">Новинки NORD HOME</h1>
+                        <p class="new-intro__description">
+                            Новые предметы для дома, которые уже появились в коллекции NORD HOME.
+                        </p>
+                    </div>
+
+                    <figure class="new-intro__media">
+                        <img class="new-intro__image" src="assets/images/promo-atmosphere.jpg" alt="Новая коллекция декора NORD HOME в уютном интерьере">
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= NEW PRODUCTS ================= -->
+        <section class="new-products" aria-labelledby="new-products-title">
+            <div class="new-products__container">
+
+                <div class="new-products__header">
+                    <h2 class="new-products__title" id="new-products-title">Только что в NORD HOME</h2>
+                    <p class="new-products__text">
+                        Мы собрали новые предметы, которые помогут добавить дому характер и атмосферу.
+                    </p>
+                </div>
+
+                <div class="new-products__grid">
+
+                    <article class="new-product-card" data-id="candle-sever" data-category="candles" data-new="true">
+                        <a class="new-product-card__media" href="product/candle-sever.html">
+                            <img class="new-product-card__image" src="assets/images/product-candle.jpeg" alt="Свеча «Север»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Свечи и ароматы</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/candle-sever.html">Свеча «Север»</a>
+                            </h3>
+                            <p class="new-product-card__price">1 290 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить свечу «Север» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="vase-minimal" data-category="decor" data-new="true">
+                        <a class="new-product-card__media" href="product/vase-minimal.html">
+                            <img class="new-product-card__image" src="assets/images/product-vase.jpeg" alt="Ваза «Минимал»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Декор</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/vase-minimal.html">Ваза «Минимал»</a>
+                            </h3>
+                            <p class="new-product-card__price">2 490 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить вазу «Минимал» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="lamp-oslo" data-category="lighting" data-new="true">
+                        <a class="new-product-card__media" href="product/lamp-oslo.html">
+                            <img class="new-product-card__image" src="assets/images/product-lamp.webp" alt="Настольная лампа «Осло»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Освещение</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/lamp-oslo.html">Настольная лампа «Осло»</a>
+                            </h3>
+                            <p class="new-product-card__price">4 990 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить лампу «Осло» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="blanket-warm" data-category="textile" data-new="true">
+                        <a class="new-product-card__media" href="product/blanket-warm.html">
+                            <img class="new-product-card__image" src="assets/images/product-blanket.jpeg" alt="Плед «Тепло»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Текстиль</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/blanket-warm.html">Плед «Тепло»</a>
+                            </h3>
+                            <p class="new-product-card__price">3 290 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить плед «Тепло» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="candlestick-stone" data-category="decor" data-new="true">
+                        <a class="new-product-card__media" href="product/candlestick-stone.html">
+                            <img class="new-product-card__image" src="assets/images/new-candlestick.jpg" alt="Подсвечник «Камень»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Декор</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/candlestick-stone.html">Подсвечник «Камень»</a>
+                            </h3>
+                            <p class="new-product-card__price">1 590 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить подсвечник «Камень» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="vase-forma" data-category="decor" data-new="true">
+                        <a class="new-product-card__media" href="product/vase-forma.html">
+                            <img class="new-product-card__image" src="assets/images/new-vase.webp" alt="Ваза «Форма»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Декор</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/vase-forma.html">Ваза «Форма»</a>
+                            </h3>
+                            <p class="new-product-card__price">2 290 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить вазу «Форма» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="diffuser-forest" data-category="candles" data-new="true">
+                        <a class="new-product-card__media" href="product/diffuser-forest.html">
+                            <img class="new-product-card__image" src="assets/images/new-diffuser.jpeg" alt="Аромадиффузор «Лес»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Свечи и ароматы</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/diffuser-forest.html">Аромадиффузор «Лес»</a>
+                            </h3>
+                            <p class="new-product-card__price">1 990 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить аромадиффузор «Лес» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="blanket-north-wind" data-category="textile" data-new="true">
+                        <a class="new-product-card__media" href="product/blanket-north-wind.html">
+                            <img class="new-product-card__image" src="assets/images/new-blanket.jpg" alt="Плед «Северный ветер»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Текстиль</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/blanket-north-wind.html">Плед «Северный ветер»</a>
+                            </h3>
+                            <p class="new-product-card__price">3 490 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить плед «Северный ветер» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="lamp-moon" data-category="lighting" data-new="true">
+                        <a class="new-product-card__media" href="product/lamp-moon.html">
+                            <img class="new-product-card__image" src="assets/images/new-lamp.jpg" alt="Светильник «Луна»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Освещение</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/lamp-moon.html">Светильник «Луна»</a>
+                            </h3>
+                            <p class="new-product-card__price">4 290 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить светильник «Луна» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="basket-nord" data-category="decor" data-new="true">
+                        <a class="new-product-card__media" href="product/basket-nord.html">
+                            <img class="new-product-card__image" src="assets/images/new-basket.jpeg" alt="Корзина «Норд»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Декор</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/basket-nord.html">Корзина «Норд»</a>
+                            </h3>
+                            <p class="new-product-card__price">2 190 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить корзину «Норд» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="candle-collection" data-category="candles" data-new="true">
+                        <a class="new-product-card__media" href="product/candle-collection.html">
+                            <img class="new-product-card__image" src="assets/images/category-candles.jpeg" alt="Набор свечей «Коллекция»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Свечи и ароматы</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/candle-collection.html">Набор свечей «Коллекция»</a>
+                            </h3>
+                            <p class="new-product-card__price">2 790 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить набор свечей «Коллекция» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                    <article class="new-product-card" data-id="vase-set" data-category="decor" data-new="true">
+                        <a class="new-product-card__media" href="product/vase-set.html">
+                            <img class="new-product-card__image" src="assets/images/category-decor.jpg" alt="Комплект ваз «Тишина»">
+                            <span class="new-product-card__badge">Новинка</span>
+                        </a>
+                        <div class="new-product-card__content">
+                            <p class="new-product-card__category">Декор</p>
+                            <h3 class="new-product-card__title">
+                                <a class="new-product-card__link" href="product/vase-set.html">Комплект ваз «Тишина»</a>
+                            </h3>
+                            <p class="new-product-card__price">5 490 ₽</p>
+                            <button class="new-product-card__favorite" type="button" aria-label="Добавить комплект ваз «Тишина» в избранное" aria-pressed="false">♡</button>
+                            <button class="new-product-card__button" type="button">В корзину</button>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="new-products__cta" aria-labelledby="new-products-cta-title">
+            <div class="new-products__cta-inner">
+                <h2 class="new-products__cta-title" id="new-products-cta-title">Нашли что-то своё?</h2>
+                <p class="new-products__cta-text">
+                    Загляните в полный каталог NORD HOME и найдите предметы, которые сделают ваш дом особенным.
+                </p>
+                <a class="new-products__cta-link" href="catalog.html">Перейти в каталог</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <p class="footer__logo">NORD HOME</p>
+                <p class="footer__about">
+                    Декор и аксессуары<br>
+                    для современного дома.
+                </p>
+            </div>
+
+            <nav class="footer__column" aria-labelledby="footer-shop-title">
+                <h2 class="footer__column-title" id="footer-shop-title">Магазин</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="new.html">Новинки</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="popular.html">Популярное</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="sale.html">Акции</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__column" aria-labelledby="footer-customers-title">
+                <h2 class="footer__column-title" id="footer-customers-title">Покупателям</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="delivery.html">Доставка</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="payment.html">Оплата</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="return.html">Возврат</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="faq.html">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__column" aria-labelledby="footer-contacts-title">
+                <h2 class="footer__column-title" id="footer-contacts-title">Контакты</h2>
+                <ul class="footer__list footer__list--contacts">
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--phone" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--email" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </li>
+                </ul>
+                <ul class="footer__socials">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="telegram.html">Telegram</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="vk.html">VK</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="instagram.html">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 NORD HOME. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

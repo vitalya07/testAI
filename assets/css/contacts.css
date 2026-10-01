@@ -1,0 +1,1220 @@
+/* ========================================
+   NORD HOME — КОНТАКТЫ
+   Стили только страницы contacts.html.
+   Header и Footer приходят из header.css
+   и footer.css, здесь они не переопределяются.
+   ======================================== */
+
+/* ========================================
+   1. ПЕРЕМЕННЫЕ
+   Палитра и шрифт те же, что в about.css,
+   home.css и popular.css.
+   ======================================== */
+
+.contacts-hero,
+.contacts-info,
+.contacts-form,
+.contacts-socials,
+.contacts-cta {
+    --contacts-ink: #2f2a26;
+    --contacts-muted: #6f6861;
+    --contacts-soft: #8a8177;
+    --contacts-line: #e8e5e1;
+    --contacts-cream: #faf8f5;
+    --contacts-accent: #8a7258;
+
+    --contacts-font: "Helvetica Neue", Arial, sans-serif;
+
+    --contacts-content: 1280px;
+    --contacts-gap: 22px;
+    --contacts-gutter: 32px;
+    --contacts-radius: 4px;
+
+    --contacts-ease: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+/* ========================================
+   2. БАЗА
+   ======================================== */
+
+.contacts-hero *,
+.contacts-info *,
+.contacts-form *,
+.contacts-socials *,
+.contacts-cta * {
+    box-sizing: border-box;
+}
+
+.contacts-hero a,
+.contacts-info a,
+.contacts-socials a,
+.contacts-cta a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contacts-hero h1,
+.contacts-hero p,
+.contacts-info h2,
+.contacts-info p,
+.contacts-form h2,
+.contacts-form p,
+.contacts-socials h2,
+.contacts-socials p,
+.contacts-cta h2,
+.contacts-cta p {
+    margin: 0;
+}
+
+.contacts-socials ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ========================================
+   3. КОНТЕЙНЕРЫ И СЕКЦИИ
+   width: 100%, а не 100vw: 100vw не учитывает
+   вертикальный скроллбар и даёт горизонтальную
+   прокрутку. min-width: 0 позволяет контейнеру
+   сжиматься внутри родителя.
+   ======================================== */
+
+.contacts-hero,
+.contacts-info,
+.contacts-form,
+.contacts-socials,
+.contacts-cta {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.contacts-hero__container,
+.contacts-info__container,
+.contacts-form__container,
+.contacts-socials__container {
+    width: 100%;
+    max-width: var(--contacts-content);
+
+    min-width: 0;
+
+    margin: 0 auto;
+
+    padding-inline: var(--contacts-gutter);
+}
+
+/* Тёмная панель внутри светлой секции:
+   так CTA не сливается с тёмным footer */
+.contacts-cta__panel {
+    box-sizing: border-box;
+
+    width: 100%;
+    max-width: var(--contacts-content);
+
+    min-width: 0;
+
+    margin: 0 auto;
+
+    padding: clamp(38px, 5vw, 66px) clamp(20px, 4vw, 56px);
+
+    border-radius: calc(var(--contacts-radius) * 2);
+
+    background: var(--contacts-ink);
+
+    text-align: center;
+
+    animation: contacts-fade-up 0.8s var(--contacts-ease) both;
+}
+
+
+/* ========================================
+   4. HERO
+   ======================================== */
+
+.contacts-hero {
+    position: relative;
+    overflow: hidden;
+
+    background: var(--contacts-cream);
+
+    padding: clamp(40px, 5.5vw, 82px) 0 clamp(44px, 6vw, 88px);
+}
+
+/* Минималистичная декоративная деталь:
+   тонкая сетка-арка в правом верхнем углу */
+.contacts-hero::after {
+    content: "";
+
+    position: absolute;
+    top: clamp(-90px, -6vw, -40px);
+    right: clamp(-60px, -4vw, -20px);
+
+    width: clamp(180px, 22vw, 300px);
+    height: clamp(180px, 22vw, 300px);
+
+    border: 1px solid rgba(138, 114, 88, 0.22);
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.contacts-hero__container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 860px;
+
+    animation: contacts-fade-up 0.8s var(--contacts-ease) both;
+}
+
+.contacts-hero__eyebrow {
+    color: var(--contacts-soft);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts-hero__title {
+    margin-top: 16px;
+
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+}
+
+.contacts-hero__text {
+    max-width: 58ch;
+    margin-top: 20px;
+
+    color: var(--contacts-muted);
+
+    font-family: var(--contacts-font);
+    font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+.contacts-hero__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    margin-top: clamp(24px, 3vw, 34px);
+}
+
+.contacts-hero__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding: 14px 30px;
+
+    border: 1px solid #111;
+    border-radius: 3px;
+
+    background: transparent;
+    color: #111;
+
+    font-family: var(--contacts-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    transition: all 0.3s ease;
+}
+
+.contacts-hero__link:hover {
+    background: #111;
+    border-color: #111;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.contacts-hero__link:focus-visible {
+    outline: 2px solid var(--contacts-accent);
+    outline-offset: 3px;
+}
+
+/* Тонкая линия рядом с кнопкой как
+   минималистичный визуальный акцент */
+.contacts-hero__mark {
+    display: block;
+
+    min-width: 0;
+
+    height: 1px;
+
+    background: var(--contacts-line);
+
+    transition: background var(--contacts-ease);
+}
+
+.contacts-hero__link:hover ~ .contacts-hero__mark {
+    background: var(--contacts-accent);
+}
+
+
+/* ========================================
+   5. КОНТАКТЫ
+   ======================================== */
+
+.contacts-info {
+    background: #ffffff;
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.contacts-info__header {
+    max-width: 62ch;
+    min-width: 0;
+
+    margin-bottom: clamp(26px, 3vw, 42px);
+
+    animation: contacts-fade-up 0.8s var(--contacts-ease) both;
+}
+
+.contacts-info__eyebrow {
+    color: var(--contacts-soft);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts-info__title {
+    margin-top: 12px;
+
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.contacts-info__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--contacts-gap);
+
+    min-width: 0;
+}
+
+.contacts-card {
+    display: flex;
+    flex-direction: column;
+
+    /* без min-width: 0 grid-элемент не сжимается
+       уже своего содержимого и выталкивает сетку */
+    min-width: 0;
+
+    padding: 24px 22px 26px;
+
+    background: var(--contacts-cream);
+    border: 1px solid var(--contacts-line);
+    border-radius: var(--contacts-radius);
+
+    animation: contacts-fade-up 0.7s var(--contacts-ease) both;
+
+    transition:
+        border-color var(--contacts-ease),
+        background var(--contacts-ease),
+        box-shadow var(--contacts-ease),
+        transform var(--contacts-ease);
+}
+
+.contacts-card:nth-child(1) { animation-delay: 0.04s; }
+.contacts-card:nth-child(2) { animation-delay: 0.1s; }
+.contacts-card:nth-child(3) { animation-delay: 0.16s; }
+.contacts-card:nth-child(4) { animation-delay: 0.22s; }
+
+.contacts-card:hover {
+    background: #ffffff;
+    border-color: #ded8d0;
+    box-shadow: 0 14px 34px rgba(47, 42, 38, 0.07);
+
+    transform: translateY(-4px);
+}
+
+.contacts-card__number {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: var(--contacts-accent);
+
+    font-family: var(--contacts-font);
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+}
+
+.contacts-card__label {
+    color: var(--contacts-soft);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+/* overflow-wrap защищает длинный email
+   от выхода за границы карточки */
+.contacts-card__value {
+    margin-top: 14px;
+
+    min-width: 0;
+
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+
+    transition: color var(--contacts-ease);
+}
+
+.contacts-card__value:hover {
+    color: var(--contacts-accent);
+}
+
+.contacts-card__value:focus-visible {
+    outline: 2px solid var(--contacts-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.contacts-card__value--text {
+    color: var(--contacts-ink);
+}
+
+
+/* ========================================
+   6. ФОРМА
+   На desktop — текст слева, форма справа.
+   На мобильных — одна колонка.
+   ======================================== */
+
+.contacts-form {
+    background: var(--contacts-cream);
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.contacts-form__container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    align-items: start;
+
+    gap: clamp(30px, 4.5vw, 64px);
+}
+
+.contacts-form__text {
+    min-width: 0;
+
+    animation: contacts-fade-up 0.8s var(--contacts-ease) both;
+}
+
+.contacts-form__eyebrow {
+    color: var(--contacts-soft);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts-form__title {
+    margin-top: 12px;
+
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.contacts-form__subtitle {
+    margin-top: 14px;
+
+    color: var(--contacts-muted);
+
+    font-family: var(--contacts-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+.contacts-form__body {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    min-width: 0;
+
+    padding: 28px 26px;
+
+    background: #ffffff;
+    border: 1px solid var(--contacts-line);
+    border-radius: calc(var(--contacts-radius) * 1.5);
+
+    animation: contacts-fade-up 0.8s 0.1s var(--contacts-ease) both;
+}
+
+.contacts-form__field {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+/* Сообщение занимает всю ширину формы */
+.contacts-form__field--wide {
+    grid-column: 1 / -1;
+}
+
+.contacts-form__label {
+    margin-bottom: 9px;
+
+    color: var(--contacts-soft);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts-form__input {
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--contacts-line);
+    border-radius: 3px;
+
+    background: var(--contacts-cream);
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    transition:
+        border-color var(--contacts-ease),
+        background var(--contacts-ease),
+        box-shadow var(--contacts-ease);
+}
+
+.contacts-form__input::placeholder {
+    color: #b3aca4;
+}
+
+.contacts-form__input:hover {
+    border-color: #d8d2cb;
+}
+
+.contacts-form__input:focus {
+    background: #ffffff;
+
+    border-color: var(--contacts-accent);
+    box-shadow: 0 0 0 3px rgba(138, 114, 88, 0.1);
+
+    outline: none;
+}
+
+.contacts-form__input:focus-visible {
+    outline: 2px solid var(--contacts-accent);
+    outline-offset: 2px;
+}
+
+.contacts-form__textarea {
+    min-height: 140px;
+
+    resize: vertical;
+}
+
+.contacts-form__actions {
+    display: flex;
+
+    grid-column: 1 / -1;
+}
+
+.contacts-form__button {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+
+    padding: 14px 32px;
+
+    border: 1px solid var(--contacts-ink);
+    border-radius: 3px;
+
+    background: var(--contacts-ink);
+    color: #ffffff;
+
+    font-family: var(--contacts-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        background var(--contacts-ease),
+        color var(--contacts-ease),
+        border-color var(--contacts-ease),
+        transform var(--contacts-ease);
+}
+
+.contacts-form__button:hover {
+    background: #ffffff;
+    border-color: var(--contacts-ink);
+    color: var(--contacts-ink);
+
+    transform: translateY(-2px);
+}
+
+.contacts-form__button:active {
+    background: #f0ece7;
+
+    transform: translateY(0);
+}
+
+.contacts-form__button:focus-visible {
+    outline: 2px solid var(--contacts-accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   7. СОЦИАЛЬНЫЕ СЕТИ
+   ======================================== */
+
+.contacts-socials {
+    background: #ffffff;
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.contacts-socials__title {
+    color: var(--contacts-ink);
+
+    font-family: var(--contacts-font);
+    font-size: clamp(24px, 2.9vw, 36px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+
+    animation: contacts-fade-up 0.8s var(--contacts-ease) both;
+}
+
+.contacts-socials__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: clamp(24px, 3vw, 38px);
+}
+
+.contacts-socials__item {
+    min-width: 0;
+}
+
+.contacts-socials__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 12px 26px;
+
+    border: 1px solid var(--contacts-line);
+    border-radius: 3px;
+
+    background: #ffffff;
+
+    font-family: var(--contacts-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.06em;
+    line-height: 1.2;
+
+    transition:
+        background var(--contacts-ease),
+        color var(--contacts-ease),
+        border-color var(--contacts-ease),
+        transform var(--contacts-ease);
+}
+
+.contacts-socials__link:hover {
+    background: var(--contacts-ink);
+    border-color: var(--contacts-ink);
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.contacts-socials__link:focus-visible {
+    outline: 2px solid var(--contacts-accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   8. CTA
+   Тёмный фон: кнопка прозрачная,
+   с белой тонкой рамкой и белым текстом.
+   ======================================== */
+
+.contacts-cta {
+    background: #ffffff;
+
+    padding: 0 var(--contacts-gutter) clamp(48px, 5vw, 72px);
+}
+
+.contacts-cta__eyebrow {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-family: var(--contacts-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.18em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.contacts-cta__title {
+    margin-top: 14px;
+
+    color: #ffffff;
+
+    font-family: var(--contacts-font);
+    font-size: clamp(26px, 3.4vw, 44px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.14;
+}
+
+.contacts-cta__text {
+    max-width: 52ch;
+
+    margin: 16px auto 0;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-family: var(--contacts-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+.contacts-cta__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+    min-width: 0;
+    min-height: 50px;
+
+    margin-top: 28px;
+    padding: 14px 34px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+
+    background: transparent;
+    color: #fff;
+
+    font-family: var(--contacts-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+.contacts-cta__link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+.contacts-cta__link:active {
+    background: rgba(255, 255, 255, 0.18);
+
+    transform: translateY(0);
+}
+
+.contacts-cta__link:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 3px;
+}
+
+/* Гарантированно белый текст во всех
+   состояниях: специфичность выше, чем у
+   общего правила .contacts-cta a { color: inherit } */
+.contacts-cta a.contacts-cta__link,
+.contacts-cta__link:hover,
+.contacts-cta__link:focus,
+.contacts-cta__link:active {
+    color: #fff;
+}
+
+
+/* ========================================
+   9. АНИМАЦИИ ПОЯВЛЕНИЯ
+   ======================================== */
+
+@keyframes contacts-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   10. АДАПТИВНОСТЬ
+   ======================================== */
+
+/* --- 1280px --- */
+@media (max-width: 1280px) {
+
+    .contacts-hero,
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials,
+    .contacts-cta {
+        --contacts-gutter: 30px;
+        --contacts-gap: 20px;
+    }
+}
+
+/* --- 1024px: две карточки контактов в ряд --- */
+@media (max-width: 1024px) {
+
+    .contacts-info__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* --- 991px: форма под текстом --- */
+@media (max-width: 991px) {
+
+    .contacts-hero {
+        padding: 38px 0 46px;
+    }
+
+    .contacts-hero__container {
+        max-width: 100%;
+    }
+
+    .contacts-form__container {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 26px;
+    }
+
+    .contacts-form__body {
+        padding: 24px 22px;
+    }
+}
+
+/* --- 768px: поля формы и карточки в одну колонку --- */
+@media (max-width: 768px) {
+
+    .contacts-hero,
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials,
+    .contacts-cta {
+        --contacts-gutter: 22px;
+        --contacts-gap: 16px;
+    }
+
+    .contacts-form__body {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 16px;
+    }
+
+    .contacts-info__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contacts-card {
+        padding: 20px 18px 22px;
+    }
+
+    .contacts-card__number {
+        margin-bottom: 16px;
+    }
+
+    .contacts-card__value {
+        font-size: 15.5px;
+    }
+
+    .contacts-hero__link {
+        width: 100%;
+    }
+
+    .contacts-hero__mark {
+        display: none;
+    }
+}
+
+/* --- 576px --- */
+@media (max-width: 576px) {
+
+    .contacts-hero__title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .contacts-hero__text {
+        font-size: 15px;
+    }
+
+    .contacts-form__body {
+        padding: 20px 18px;
+
+        border-radius: var(--contacts-radius);
+    }
+}
+
+/* --- 480px --- */
+@media (max-width: 480px) {
+
+    .contacts-hero,
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials,
+    .contacts-cta {
+        --contacts-gutter: 18px;
+    }
+
+    .contacts-hero {
+        padding: 32px 0 40px;
+    }
+
+    .contacts-hero__eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .contacts-hero__title {
+        margin-top: 12px;
+
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .contacts-hero__text {
+        margin-top: 16px;
+
+        font-size: 14.5px;
+    }
+
+    .contacts-hero__actions {
+        margin-top: 22px;
+    }
+
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials {
+        padding: 36px 0 44px;
+    }
+
+    .contacts-info__header {
+        margin-bottom: 22px;
+    }
+
+    .contacts-cta {
+        padding-bottom: 44px;
+    }
+
+    .contacts-cta__panel {
+        padding: 28px 18px;
+
+        border-radius: var(--contacts-radius);
+    }
+
+    .contacts-cta__link {
+        width: 100%;
+
+        padding: 13px 18px;
+    }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+
+    .contacts-hero,
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials,
+    .contacts-cta {
+        --contacts-gutter: 16px;
+    }
+
+    .contacts-hero__title {
+        font-size: 27px;
+    }
+
+    .contacts-info__title,
+    .contacts-form__title,
+    .contacts-socials__title,
+    .contacts-cta__title {
+        font-size: 22px;
+    }
+
+    .contacts-card {
+        padding: 16px 15px 18px;
+    }
+
+    .contacts-card__value {
+        margin-top: 12px;
+
+        font-size: 15px;
+    }
+
+    .contacts-form__body {
+        padding: 18px 15px;
+    }
+
+    .contacts-form__input {
+        padding: 12px 12px;
+
+        font-size: 13.5px;
+    }
+
+    .contacts-form__button {
+        padding: 13px 14px;
+
+        font-size: 12px;
+    }
+
+    .contacts-socials__link {
+        padding: 11px 20px;
+
+        font-size: 12px;
+    }
+
+    .contacts-cta__text {
+        font-size: 13.5px;
+    }
+
+    .contacts-cta__panel {
+        padding: 26px 15px;
+    }
+
+    .contacts-cta__link {
+        padding: 12px 14px;
+
+        font-size: 12px;
+    }
+}
+
+/* --- 320px: без горизонтального скролла --- */
+@media (max-width: 320px) {
+
+    .contacts-hero,
+    .contacts-info,
+    .contacts-form,
+    .contacts-socials,
+    .contacts-cta {
+        --contacts-gutter: 12px;
+        --contacts-gap: 12px;
+    }
+
+    .contacts-hero::after {
+        top: -70px;
+        right: -80px;
+
+        width: 170px;
+        height: 170px;
+    }
+
+    .contacts-hero__title {
+        font-size: 25px;
+        letter-spacing: -0.025em;
+    }
+
+    .contacts-hero__text {
+        font-size: 13.5px;
+    }
+
+    .contacts-hero__link {
+        min-height: 46px;
+
+        padding: 12px 14px;
+
+        font-size: 12px;
+    }
+
+    .contacts-card {
+        padding: 14px 13px 16px;
+    }
+
+    .contacts-card__value {
+        font-size: 14.5px;
+    }
+
+    .contacts-form__body {
+        padding: 16px 13px;
+
+        gap: 14px;
+    }
+
+    .contacts-form__label {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
+
+    .contacts-form__input {
+        min-height: 44px;
+
+        padding: 11px 11px;
+
+        font-size: 13px;
+    }
+
+    .contacts-form__button {
+        min-height: 46px;
+
+        padding: 12px 10px;
+
+        font-size: 11.5px;
+    }
+
+    .contacts-socials__link {
+        min-height: 42px;
+
+        padding: 10px 16px;
+
+        font-size: 11.5px;
+    }
+
+    .contacts-cta__panel {
+        padding: 24px 13px;
+    }
+
+    .contacts-cta__link {
+        padding: 12px 10px;
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* ========================================
+   11. REDUCED MOTION
+   Декоративные эффекты отключаются,
+   фокус-состояния остаются видимыми.
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .contacts-hero__container,
+    .contacts-info__header,
+    .contacts-info__grid,
+    .contacts-card,
+    .contacts-form__text,
+    .contacts-form__body,
+    .contacts-socials__title,
+    .contacts-cta__panel {
+        animation: none;
+    }
+
+    .contacts-card,
+    .contacts-hero__link,
+    .contacts-hero__mark,
+    .contacts-form__input,
+    .contacts-form__button,
+    .contacts-socials__link,
+    .contacts-cta__link {
+        transition-duration: 0.01ms;
+    }
+
+    .contacts-card:hover,
+    .contacts-hero__link:hover,
+    .contacts-socials__link:hover,
+    .contacts-cta__link:hover {
+        transform: none;
+    }
+}

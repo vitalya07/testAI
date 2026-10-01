@@ -1,0 +1,1090 @@
+/* ========================================
+   NORD HOME — ПОПУЛЯРНОЕ
+   Стили только страницы popular.html.
+   Header и Footer приходят из header.css
+   и footer.css, здесь они не переопределяются.
+   ======================================== */
+
+/* ========================================
+   1. ПЕРЕМЕННЫЕ
+   Палитра и шрифт те же, что в new.css —
+   используем натуральные оттенки проекта.
+   ======================================== */
+
+.popular-hero,
+.popular-products,
+.popular-products__cta {
+    --popular-ink: #2f2a26;
+    --popular-muted: #6f6861;
+    --popular-soft: #8a8177;
+    --popular-line: #e8e5e1;
+    --popular-cream: #faf8f5;
+    --popular-beige: #f2ede6;
+    --popular-accent: #8a7258;
+
+    --popular-font: "Helvetica Neue", Arial, sans-serif;
+
+    --popular-content: 1280px;
+    --popular-page: 1480px;
+    --popular-gap: 22px;
+    --popular-gutter: 32px;
+    --popular-radius: 4px;
+
+    --popular-ease: 0.3s ease;
+}
+
+
+/* ========================================
+   2. БАЗА
+   ======================================== */
+
+.popular-hero,
+.popular-hero *,
+.popular-products,
+.popular-products *,
+.popular-products__cta,
+.popular-products__cta * {
+    box-sizing: border-box;
+}
+
+.popular-hero img,
+.popular-products img {
+    display: block;
+
+    max-width: 100%;
+}
+
+.popular-hero a,
+.popular-products a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.popular-hero h1,
+.popular-hero p,
+.popular-hero figure,
+.popular-products h2,
+.popular-products h3,
+.popular-products p,
+.popular-products figure,
+.popular-products__cta h2,
+.popular-products__cta p {
+    margin: 0;
+}
+
+
+/* ========================================
+   3. КОНТЕЙНЕРЫ
+   width: 100%, а не 100vw: 100vw не учитывает
+   вертикальный скроллбар и даёт горизонтальную
+   прокрутку. min-width: 0 позволяет контейнеру
+   сжиматься внутри родителя.
+   ======================================== */
+
+.popular-hero,
+.popular-products,
+.popular-products__cta {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.popular-hero__container,
+.popular-products__container,
+.popular-products__cta-inner {
+    width: 100%;
+    max-width: var(--popular-content);
+
+    min-width: 0;
+
+    margin: 0 auto;
+    padding-inline: var(--popular-gutter);
+}
+
+
+/* ========================================
+   4. HERO
+   ======================================== */
+
+.popular-hero {
+    background: var(--popular-cream);
+
+    padding: clamp(40px, 5.5vw, 82px) 0 clamp(44px, 6vw, 88px);
+}
+
+.popular-hero__container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+
+    gap: clamp(30px, 4.5vw, 64px);
+}
+
+.popular-hero__content {
+    min-width: 0;
+
+    animation: popular-fade-up 0.7s var(--popular-ease) both;
+}
+
+.popular-hero__eyebrow {
+    color: var(--popular-soft);
+
+    font-family: var(--popular-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.popular-hero__title {
+    margin-top: 16px;
+
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: clamp(34px, 5vw, 60px);
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+}
+
+.popular-hero__subtitle {
+    margin-top: 18px;
+
+    color: var(--popular-muted);
+
+    font-family: var(--popular-font);
+    font-size: clamp(16px, 1.5vw, 19px);
+    font-weight: 400;
+
+    line-height: 1.45;
+}
+
+.popular-hero__description {
+    max-width: 46ch;
+    margin-top: 16px;
+
+    color: var(--popular-muted);
+
+    font-family: var(--popular-font);
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+.popular-hero__media {
+    position: relative;
+
+    margin: 0;
+    overflow: hidden;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: calc(var(--popular-radius) * 2);
+
+    background: var(--popular-beige);
+
+    animation: popular-fade-in 0.8s 0.1s var(--popular-ease) both;
+}
+
+.popular-hero__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.001);
+
+    transition: transform 0.6s ease;
+}
+
+.popular-hero__media:hover .popular-hero__image {
+    transform: scale(1.035);
+}
+
+
+/* ========================================
+   5. СЕКЦИЯ ТОВАРОВ
+   ======================================== */
+
+.popular-products {
+    background: #ffffff;
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.popular-products__header {
+    max-width: 64ch;
+    min-width: 0;
+
+    margin-bottom: clamp(26px, 3vw, 42px);
+}
+
+.popular-products__title {
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: clamp(24px, 2.9vw, 36px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.16;
+}
+
+.popular-products__text {
+    margin-top: 13px;
+
+    color: var(--popular-muted);
+
+    font-family: var(--popular-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   6. СЕТКА
+   ======================================== */
+
+.popular-products__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--popular-gap);
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   7. КАРТОЧКА ТОВАРА
+   ======================================== */
+
+.popular-product-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    /* без min-width: 0 grid-элемент не сжимается
+       уже своего содержимого и выталкивает сетку */
+    min-width: 0;
+
+    background: #ffffff;
+    border: 1px solid var(--popular-line);
+    border-radius: var(--popular-radius);
+
+    overflow: hidden;
+
+    /* Появление карточек каскадом:
+       каждая следующая чуть позже предыдущей */
+    animation: popular-fade-up 0.6s var(--popular-ease) both;
+
+    transition:
+        border-color var(--popular-ease),
+        box-shadow var(--popular-ease),
+        transform var(--popular-ease);
+}
+
+.popular-product-card:nth-child(1) { animation-delay: 0.02s; }
+.popular-product-card:nth-child(2) { animation-delay: 0.07s; }
+.popular-product-card:nth-child(3) { animation-delay: 0.12s; }
+.popular-product-card:nth-child(4) { animation-delay: 0.17s; }
+.popular-product-card:nth-child(5) { animation-delay: 0.22s; }
+.popular-product-card:nth-child(6) { animation-delay: 0.27s; }
+.popular-product-card:nth-child(7) { animation-delay: 0.32s; }
+.popular-product-card:nth-child(8) { animation-delay: 0.37s; }
+.popular-product-card:nth-child(9) { animation-delay: 0.42s; }
+.popular-product-card:nth-child(10) { animation-delay: 0.47s; }
+.popular-product-card:nth-child(11) { animation-delay: 0.52s; }
+.popular-product-card:nth-child(12) { animation-delay: 0.57s; }
+
+.popular-product-card:hover {
+    border-color: #ded8d0;
+
+    box-shadow: 0 14px 34px rgba(47, 42, 38, 0.08);
+
+    transform: translateY(-2px);
+}
+
+
+/* --- Изображение --- */
+
+.popular-product-card__media {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    /* одинаковая высота у всех карточек */
+    aspect-ratio: 1 / 1.08;
+
+    background: var(--popular-cream);
+}
+
+.popular-product-card__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.popular-product-card:hover .popular-product-card__image {
+    transform: scale(1.03);
+}
+
+
+/* --- Контент --- */
+
+.popular-product-card__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+
+    min-width: 0;
+
+    padding: 18px 18px 20px;
+}
+
+.popular-product-card__category {
+    color: var(--popular-soft);
+
+    font-family: var(--popular-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.popular-product-card__title {
+    margin-top: 9px;
+
+    min-width: 0;
+
+    font-family: var(--popular-font);
+    font-size: 15.5px;
+    font-weight: 500;
+
+    line-height: 1.35;
+}
+
+.popular-product-card__link {
+    color: var(--popular-ink);
+
+    background-image: linear-gradient(currentColor, currentColor);
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 1px;
+
+    transition:
+        color var(--popular-ease),
+        background-size var(--popular-ease);
+}
+
+/* Подчёркивание выезжает слева направо */
+.popular-product-card__link:hover {
+    color: var(--popular-accent);
+
+    background-size: 100% 1px;
+}
+
+.popular-product-card__link:focus-visible {
+    outline: 2px solid var(--popular-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+.popular-product-card__price {
+    margin-top: 10px;
+
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: 16px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+
+/* --- Действия --- */
+
+.popular-product-card__actions {
+    display: flex;
+
+    /* прижимаем кнопку к низу карточки,
+       чтобы карточки в ряду были одной высоты */
+    margin-top: auto;
+
+    padding-top: 16px;
+}
+
+.popular-product-card__button {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+
+    padding: 12px 16px;
+
+    border: 1px solid var(--popular-ink);
+    border-radius: 3px;
+
+    background: #ffffff;
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        background var(--popular-ease),
+        color var(--popular-ease),
+        border-color var(--popular-ease),
+        transform 0.1s ease;
+}
+
+.popular-product-card__button:hover {
+    background: var(--popular-ink);
+    border-color: var(--popular-ink);
+    color: #ffffff;
+}
+
+.popular-product-card__button:active {
+    background: #4a423b;
+    border-color: #4a423b;
+
+    transform: scale(0.985);
+}
+
+.popular-product-card__button:focus-visible {
+    outline: 2px solid var(--popular-accent);
+    outline-offset: 3px;
+}
+
+/* Состояние «Добавлено» — как в остальных карточках проекта */
+.popular-product-card__button.is-added {
+    background: var(--popular-ink);
+    border-color: var(--popular-ink);
+    color: #ffffff;
+}
+
+.popular-product-card__button:disabled {
+    cursor: default;
+}
+
+
+/* ========================================
+   8. БЕЙДЖ «ХИТ»
+   ======================================== */
+
+.popular-product-card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+
+    padding: 5px 10px;
+
+    border-radius: 2px;
+
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: 10.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   9. ИЗБРАННОЕ
+   Кнопка в разметке находится в контенте карточки,
+   поэтому позиционируем её от самой карточки —
+   так она попадает на область изображения.
+   ======================================== */
+
+.popular-product-card__favorite {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid rgba(47, 42, 38, 0.12);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: 17px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background var(--popular-ease),
+        color var(--popular-ease),
+        border-color var(--popular-ease),
+        transform var(--popular-ease);
+}
+
+.popular-product-card__favorite:hover {
+    border-color: var(--popular-ink);
+    color: var(--popular-accent);
+
+    transform: scale(1.06);
+}
+
+.popular-product-card__favorite:active {
+    transform: scale(0.96);
+}
+
+.popular-product-card__favorite:focus-visible {
+    outline: 2px solid var(--popular-accent);
+    outline-offset: 2px;
+}
+
+.popular-product-card__favorite.is-active,
+.popular-product-card__favorite[aria-pressed="true"] {
+    background: var(--popular-ink);
+    border-color: var(--popular-ink);
+    color: #ffffff;
+}
+
+
+/* ========================================
+   10. CTA
+   ======================================== */
+
+.popular-products__cta {
+    background: #ffffff;
+
+    padding: 0 0 clamp(56px, 6vw, 88px);
+}
+
+.popular-products__cta-inner {
+    border: 1px solid var(--popular-line);
+    border-radius: calc(var(--popular-radius) * 2);
+
+    background: var(--popular-beige);
+
+    padding: clamp(34px, 5vw, 60px) clamp(24px, 5vw, 64px);
+
+    text-align: center;
+
+    animation: popular-fade-up 0.7s var(--popular-ease) both;
+}
+
+.popular-products__cta-title {
+    /* +15px воздуха над заголовком:
+       блок CTA становится чуть просторнее,
+       ритм «заголовок → текст» не меняется */
+    padding-top: 15px;
+
+    color: var(--popular-ink);
+
+    font-family: var(--popular-font);
+    font-size: clamp(24px, 2.9vw, 36px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+}
+
+.popular-products__cta-text {
+    max-width: 54ch;
+
+    margin: 14px auto 0;
+
+    color: var(--popular-muted);
+
+    font-family: var(--popular-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+.popular-products__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+    min-width: 0;
+    min-height: 50px;
+
+    margin-top: 26px;
+    padding: 14px 32px;
+
+    border: 1px solid var(--popular-ink);
+    border-radius: 3px;
+
+    background: var(--popular-ink);
+    color: #ffffff;
+
+    font-family: var(--popular-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    text-align: center;
+
+    transition:
+        background var(--popular-ease),
+        color var(--popular-ease),
+        border-color var(--popular-ease),
+        transform var(--popular-ease);
+}
+
+.popular-products__cta-link:hover {
+    background: #ffffff;
+    border-color: var(--popular-ink);
+    color: var(--popular-ink);
+
+    transform: translateY(-2px);
+}
+
+.popular-products__cta-link:active {
+    transform: translateY(0);
+}
+
+.popular-products__cta-link:focus-visible {
+    outline: 2px solid var(--popular-accent);
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   11. АНИМАЦИИ ПОЯВЛЕНИЯ
+   ======================================== */
+
+@keyframes popular-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popular-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   12. АДАПТИВНОСТЬ
+   ======================================== */
+
+/* --- 1200px: уменьшенные отступы --- */
+@media (max-width: 1200px) {
+
+    .popular-hero,
+    .popular-products,
+    .popular-products__cta {
+        --popular-gutter: 28px;
+        --popular-gap: 20px;
+    }
+}
+
+/* --- 1024px: три карточки в ряд --- */
+@media (max-width: 1024px) {
+
+    .popular-products__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* --- 991px: hero в столбец --- */
+@media (max-width: 991px) {
+
+    .popular-hero {
+        padding: 38px 0 46px;
+    }
+
+    .popular-hero__container {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+    .popular-hero__media {
+        aspect-ratio: 16 / 11;
+    }
+
+    .popular-hero__description {
+        max-width: 58ch;
+    }
+}
+
+/* --- 768px: две карточки в ряд --- */
+@media (max-width: 768px) {
+
+    .popular-hero,
+    .popular-products,
+    .popular-products__cta {
+        --popular-gutter: 22px;
+        --popular-gap: 16px;
+    }
+
+    .popular-products__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .popular-product-card__content {
+        padding: 15px 14px 17px;
+    }
+
+    .popular-product-card__title {
+        font-size: 14.5px;
+    }
+
+    .popular-product-card__price {
+        font-size: 15px;
+    }
+
+    .popular-product-card__badge {
+        top: 9px;
+        left: 9px;
+
+        padding: 4px 8px;
+
+        font-size: 9.5px;
+    }
+
+    .popular-product-card__favorite {
+        top: 9px;
+        right: 9px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 15px;
+    }
+
+    .popular-product-card__button {
+        min-height: 44px;
+
+        padding: 11px 10px;
+
+        font-size: 12px;
+    }
+
+    .popular-products__cta-link {
+        padding: 13px 22px;
+    }
+}
+
+/* --- 576px: одна карточка в ряд --- */
+@media (max-width: 576px) {
+
+    .popular-hero__title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .popular-hero__subtitle {
+        font-size: 16px;
+    }
+
+    .popular-hero__description {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .popular-products__grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .popular-product-card__media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .popular-product-card__content {
+        padding: 18px 18px 20px;
+    }
+
+    .popular-product-card__title {
+        font-size: 15.5px;
+    }
+}
+
+/* --- 480px --- */
+@media (max-width: 480px) {
+
+    .popular-hero,
+    .popular-products,
+    .popular-products__cta {
+        --popular-gutter: 18px;
+    }
+
+    .popular-hero {
+        padding: 32px 0 40px;
+    }
+
+    .popular-hero__eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .popular-hero__title {
+        margin-top: 12px;
+
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .popular-hero__subtitle {
+        margin-top: 14px;
+    }
+
+    .popular-hero__media {
+        aspect-ratio: 4 / 3;
+
+        border-radius: var(--popular-radius);
+    }
+
+    .popular-products {
+        padding: 36px 0 44px;
+    }
+
+    .popular-products__header {
+        margin-bottom: 22px;
+    }
+
+    .popular-products__text {
+        font-size: 13.5px;
+    }
+
+    .popular-products__cta-inner {
+        border-radius: var(--popular-radius);
+
+        padding: 28px 20px;
+    }
+
+    .popular-products__cta-link {
+        width: 100%;
+
+        padding: 13px 18px;
+    }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+
+    .popular-hero,
+    .popular-products,
+    .popular-products__cta {
+        --popular-gutter: 16px;
+    }
+
+    .popular-hero__title {
+        font-size: 27px;
+    }
+
+    .popular-hero__description {
+        margin-top: 13px;
+
+        font-size: 13.5px;
+    }
+
+    .popular-products__title,
+    .popular-products__cta-title {
+        font-size: 22px;
+    }
+
+    .popular-product-card__content {
+        padding: 16px 15px 18px;
+    }
+
+    .popular-product-card__title {
+        font-size: 15px;
+    }
+
+    .popular-product-card__price {
+        font-size: 14.5px;
+    }
+
+    .popular-product-card__actions {
+        padding-top: 14px;
+    }
+
+    .popular-product-card__button {
+        min-height: 44px;
+
+        font-size: 12px;
+    }
+
+    .popular-products__cta-inner {
+        padding: 26px 16px;
+    }
+
+    .popular-products__cta-text {
+        font-size: 13.5px;
+    }
+
+    .popular-products__cta-link {
+        padding: 12px 14px;
+
+        font-size: 12px;
+    }
+}
+
+/* --- 320px: без горизонтального скролла --- */
+@media (max-width: 320px) {
+
+    .popular-hero,
+    .popular-products,
+    .popular-products__cta {
+        --popular-gutter: 12px;
+        --popular-gap: 12px;
+    }
+
+    .popular-hero__title {
+        font-size: 25px;
+        letter-spacing: -0.025em;
+    }
+
+    .popular-hero__subtitle {
+        font-size: 15px;
+    }
+
+    .popular-hero__description {
+        font-size: 13px;
+    }
+
+    .popular-product-card__content {
+        padding: 14px 13px 16px;
+    }
+
+    .popular-product-card__category {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
+
+    .popular-product-card__title {
+        font-size: 14.5px;
+    }
+
+    .popular-product-card__price {
+        font-size: 14px;
+    }
+
+    .popular-product-card__badge {
+        top: 8px;
+        left: 8px;
+
+        padding: 4px 7px;
+
+        font-size: 9px;
+    }
+
+    .popular-product-card__favorite {
+        top: 8px;
+        right: 8px;
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 14px;
+    }
+
+    .popular-product-card__button {
+        min-height: 42px;
+
+        padding: 10px 8px;
+
+        font-size: 11.5px;
+    }
+
+    .popular-products__cta-inner {
+        padding: 24px 14px;
+    }
+
+    .popular-products__cta-link {
+        padding: 12px 10px;
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* ========================================
+   13. REDUCED MOTION
+   Декоративные эффекты отключаются,
+   фокус-состояния остаются видимыми.
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .popular-hero__content,
+    .popular-hero__media,
+    .popular-product-card,
+    .popular-products__cta-inner {
+        animation: none;
+    }
+
+    .popular-hero__image,
+    .popular-product-card__image,
+    .popular-product-card,
+    .popular-product-card__favorite,
+    .popular-product-card__button,
+    .popular-product-card__link,
+    .popular-products__cta-link {
+        transition-duration: 0.01ms;
+    }
+
+    .popular-hero__media:hover .popular-hero__image,
+    .popular-product-card:hover .popular-product-card__image,
+    .popular-product-card:hover,
+    .popular-product-card__favorite:hover,
+    .popular-product-card__button:active,
+    .popular-products__cta-link:hover {
+        transform: none;
+    }
+}

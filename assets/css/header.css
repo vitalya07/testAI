@@ -82,6 +82,9 @@
     max-width: 1280px;
     min-height: 68px;
 
+    /* контейнер не должен раздуваться содержимым */
+    min-width: 0;
+
     margin: 0 auto;
     padding: 0 32px;
 }
@@ -98,6 +101,7 @@
     justify-content: center;
 
     flex-shrink: 0;
+    min-width: 0;
 
     color: #222222;
     font-family: "Helvetica Neue", Arial, sans-serif;
@@ -135,6 +139,8 @@
    ======================================== */
 
 .header__nav {
+    min-width: 0;
+
     margin: 0 auto;
 }
 
@@ -144,6 +150,10 @@
 
     gap: 28px;
 
+    /* пункты не сжимаются, а контейнер переносит их
+       целиком — так меню не растягивает шапку */
+    flex-wrap: wrap;
+
     margin: 0;
     padding: 0;
 
@@ -152,6 +162,7 @@
 
 .header__nav-item {
     display: flex;
+    min-width: 0;
 }
 
 .header__nav-link {
@@ -279,7 +290,10 @@
     display: flex;
     align-items: center;
 
-    padding-right: 4px;
+    /* счётчик позиционируется с right:-6px,
+       поэтому ссылка должна иметь запас справа,
+       иначе он выходит за край окна */
+    padding-right: 10px;
 
     color: #777777;
     font-size: 18px;
@@ -481,6 +495,7 @@
 
     .header.is-menu-open .header__nav-list {
         flex-direction: column;
+        flex-wrap: nowrap;
         align-items: flex-start;
 
         gap: 4px;

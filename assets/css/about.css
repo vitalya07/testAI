@@ -1,0 +1,1363 @@
+/* ========================================
+   NORD HOME — О НАС
+   Стили только страницы about.html.
+   Header и Footer приходят из header.css
+   и footer.css, здесь они не переопределяются.
+   ======================================== */
+
+/* ========================================
+   1. ПЕРЕМЕННЫЕ
+   Палитра и шрифт те же, что в home.css,
+   popular.css и new.css.
+   ======================================== */
+
+.about-hero,
+.about-story,
+.about-philosophy,
+.about-process,
+.about-values,
+.about-image,
+.about-cta {
+    --about-ink: #2f2a26;
+    --about-muted: #6f6861;
+    --about-soft: #8a8177;
+    --about-line: #e8e5e1;
+    --about-cream: #faf8f5;
+    --about-beige: #f2ede6;
+    --about-accent: #8a7258;
+
+    --about-font: "Helvetica Neue", Arial, sans-serif;
+
+    --about-content: 1280px;
+    --about-page: 1480px;
+    --about-gap: 22px;
+    --about-gutter: 32px;
+    --about-radius: 4px;
+
+    --about-ease: 0.3s ease;
+}
+
+
+/* ========================================
+   2. БАЗА
+   ======================================== */
+
+.about-hero,
+.about-hero *,
+.about-story,
+.about-story *,
+.about-philosophy,
+.about-philosophy *,
+.about-process,
+.about-process *,
+.about-values,
+.about-values *,
+.about-image,
+.about-image *,
+.about-cta,
+.about-cta * {
+    box-sizing: border-box;
+}
+
+.about-hero img,
+.about-story img,
+.about-image img {
+    display: block;
+
+    max-width: 100%;
+}
+
+.about-hero a,
+.about-story a,
+.about-cta a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.about-hero h1,
+.about-hero p,
+.about-hero figure,
+.about-story h2,
+.about-story p,
+.about-story figure,
+.about-philosophy h2,
+.about-philosophy h3,
+.about-philosophy p,
+.about-process h2,
+.about-process h3,
+.about-process p,
+.about-values h2,
+.about-values h3,
+.about-values p,
+.about-cta h2,
+.about-cta p {
+    margin: 0;
+}
+
+/* Списки в about-process сбрасываем
+   как обычные списки, нумерация там
+   задана разметкой и стилями секции */
+.about-process ol,
+.about-process ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* ========================================
+   3. КОНТЕЙНЕРЫ
+   width: 100%, а не 100vw: 100vw не учитывает
+   вертикальный скроллбар и даёт горизонтальную
+   прокрутку. min-width: 0 позволяет контейнеру
+   сжиматься внутри родителя.
+   ======================================== */
+
+.about-hero,
+.about-story,
+.about-philosophy,
+.about-process,
+.about-values,
+.about-image,
+.about-cta {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.about-hero__container,
+.about-story__container,
+.about-philosophy__container,
+.about-process__container,
+.about-values__container,
+.about-cta__inner {
+    width: 100%;
+    max-width: var(--about-content);
+
+    min-width: 0;
+
+    margin: 0 auto;
+    padding-inline: var(--about-gutter);
+}
+
+.about-image__media {
+    width: 100%;
+    max-width: var(--about-content);
+
+    min-width: 0;
+
+    margin: 0 auto;
+    padding-inline: var(--about-gutter);
+}
+
+
+/* ========================================
+   4. HERO
+   Та же композиция, что на home.html:
+   текст слева, изображение справа.
+   ======================================== */
+
+.about-hero {
+    background: var(--about-cream);
+
+    padding: clamp(40px, 5.5vw, 82px) 0 clamp(44px, 6vw, 88px);
+}
+
+.about-hero__container {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+    align-items: center;
+
+    gap: clamp(30px, 4.5vw, 64px);
+}
+
+.about-hero__content {
+    min-width: 0;
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-hero__eyebrow {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-hero__title {
+    margin-top: 16px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(34px, 5vw, 60px);
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+}
+
+.about-hero__subtitle {
+    margin-top: 18px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: clamp(16px, 1.5vw, 19px);
+    font-weight: 400;
+
+    line-height: 1.45;
+}
+
+.about-hero__description {
+    max-width: 46ch;
+    margin-top: 16px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+.about-hero__media {
+    position: relative;
+
+    margin: 0;
+    overflow: hidden;
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: calc(var(--about-radius) * 2);
+
+    background: var(--about-beige);
+
+    animation: about-fade-in 0.8s 0.1s var(--about-ease) both;
+}
+
+.about-hero__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.001);
+
+    transition: transform 0.6s ease;
+}
+
+.about-hero__media:hover .about-hero__image {
+    transform: scale(1.035);
+}
+
+
+/* ========================================
+   5. НАШ ПОДХОД — текст + изображение
+   ======================================== */
+
+.about-story {
+    background: #ffffff;
+
+    padding: clamp(44px, 5.5vw, 84px) 0 clamp(48px, 6vw, 92px);
+}
+
+.about-story__container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: center;
+
+    gap: clamp(30px, 4.5vw, 68px);
+}
+
+.about-story__text {
+    min-width: 0;
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-story__eyebrow {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-story__title {
+    margin-top: 14px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.about-story__lead {
+    margin-top: 20px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(15px, 1.3vw, 17px);
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+.about-story__body {
+    max-width: 52ch;
+    margin-top: 16px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+.about-story__media {
+    position: relative;
+
+    margin: 0;
+    overflow: hidden;
+
+    aspect-ratio: 5 / 4;
+
+    border-radius: calc(var(--about-radius) * 2);
+
+    background: var(--about-cream);
+
+    animation: about-fade-in 0.8s 0.1s var(--about-ease) both;
+}
+
+.about-story__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.001);
+
+    transition: transform 0.6s ease;
+}
+
+.about-story__media:hover .about-story__image {
+    transform: scale(1.035);
+}
+
+
+/* ========================================
+   6. ФИЛОСОФИЯ
+   ======================================== */
+
+.about-philosophy {
+    background: var(--about-cream);
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.about-philosophy__header {
+    max-width: 62ch;
+    min-width: 0;
+
+    margin-bottom: clamp(28px, 3vw, 44px);
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-philosophy__eyebrow {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-philosophy__title {
+    margin-top: 14px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.about-philosophy__lead {
+    margin-top: 14px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: clamp(16px, 1.4vw, 18px);
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+.about-philosophy__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--about-gap);
+
+    min-width: 0;
+}
+
+.about-philosophy-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 26px 22px 28px;
+
+    border-top: 1px solid var(--about-line);
+
+    animation: about-fade-up 0.6s var(--about-ease) both;
+
+    transition:
+        border-color var(--about-ease),
+        transform var(--about-ease);
+}
+
+.about-philosophy-card:nth-child(1) { animation-delay: 0.02s; }
+.about-philosophy-card:nth-child(2) { animation-delay: 0.08s; }
+.about-philosophy-card:nth-child(3) { animation-delay: 0.14s; }
+.about-philosophy-card:nth-child(4) { animation-delay: 0.2s; }
+
+.about-philosophy-card:hover {
+    border-color: var(--about-ink);
+
+    transform: translateY(-2px);
+}
+
+.about-philosophy-card__number {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+}
+
+.about-philosophy-card__title {
+    margin-top: 18px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: 20px;
+    font-weight: 500;
+
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+}
+
+.about-philosophy-card__text {
+    margin-top: 12px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   7. КАК МЫ СОЗДАЁМ КОЛЛЕКЦИИ
+   На desktop — горизонтальная композиция,
+   на мобильных — вертикальная последовательность.
+   ======================================== */
+
+.about-process {
+    background: #ffffff;
+
+    padding: clamp(44px, 5vw, 74px) 0 clamp(48px, 6vw, 86px);
+}
+
+.about-process__header {
+    max-width: 62ch;
+    min-width: 0;
+
+    margin-bottom: clamp(28px, 3vw, 44px);
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-process__eyebrow {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.about-process__title {
+    margin-top: 14px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+}
+
+.about-process__lead {
+    margin-top: 14px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: clamp(15px, 1.3vw, 16.5px);
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+.about-process__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--about-gap);
+
+    min-width: 0;
+}
+
+.about-process-step {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 26px 22px 28px;
+
+    background: var(--about-cream);
+    border: 1px solid var(--about-line);
+    border-radius: var(--about-radius);
+
+    animation: about-fade-up 0.6s var(--about-ease) both;
+
+    transition:
+        border-color var(--about-ease),
+        background var(--about-ease),
+        transform var(--about-ease);
+}
+
+.about-process-step:nth-child(1) { animation-delay: 0.02s; }
+.about-process-step:nth-child(2) { animation-delay: 0.08s; }
+.about-process-step:nth-child(3) { animation-delay: 0.14s; }
+.about-process-step:nth-child(4) { animation-delay: 0.2s; }
+
+.about-process-step:hover {
+    background: #ffffff;
+    border-color: #ded8d0;
+
+    transform: translateY(-2px);
+}
+
+.about-process-step__number {
+    color: var(--about-soft);
+
+    font-family: var(--about-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+}
+
+.about-process-step__title {
+    margin-top: 18px;
+
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: 19px;
+    font-weight: 500;
+
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+}
+
+.about-process-step__text {
+    margin-top: 12px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+
+/* ========================================
+   8. ЦЕННОСТИ
+   Крупная типографика и воздух.
+   ======================================== */
+
+.about-values {
+    background: var(--about-cream);
+
+    padding: clamp(48px, 6vw, 92px) 0 clamp(52px, 7vw, 104px);
+}
+
+.about-values__title {
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(26px, 3.2vw, 40px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.12;
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-values__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: clamp(28px, 4vw, 64px);
+
+    margin-top: clamp(32px, 4vw, 60px);
+
+    min-width: 0;
+}
+
+.about-value {
+    min-width: 0;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--about-line);
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+
+    transition: border-color var(--about-ease);
+}
+
+.about-value:nth-child(1) { animation-delay: 0.04s; }
+.about-value:nth-child(2) { animation-delay: 0.12s; }
+.about-value:nth-child(3) { animation-delay: 0.2s; }
+
+.about-value:hover {
+    border-color: var(--about-ink);
+}
+
+.about-value__title {
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(24px, 2.4vw, 32px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.about-value__text {
+    margin-top: 16px;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 15px;
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   9. БОЛЬШОЙ ВИЗУАЛЬНЫЙ БЛОК
+   ======================================== */
+
+.about-image {
+    background: #ffffff;
+
+    padding: clamp(40px, 5vw, 72px) 0;
+}
+
+.about-image__media {
+    position: relative;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    aspect-ratio: 21 / 9;
+
+    border-radius: calc(var(--about-radius) * 2);
+
+    background: var(--about-beige);
+
+    animation: about-fade-in 0.9s var(--about-ease) both;
+}
+
+.about-image__img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: scale(1.001);
+
+    transition: transform 0.7s ease;
+}
+
+.about-image__media:hover .about-image__img {
+    transform: scale(1.03);
+}
+
+.about-image__caption {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(20px, 4vw, 46px);
+
+    /* выше псевдоэлемента с затемнением,
+       которое объявлен ниже */
+    z-index: 3;
+
+    width: 100%;
+    min-width: 0;
+
+    padding-inline: 24px;
+
+    transform: translateX(-50%);
+
+    color: #ffffff;
+
+    font-family: var(--about-font);
+    font-size: clamp(20px, 2.6vw, 34px);
+    font-weight: 500;
+
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+
+    text-align: center;
+
+    text-shadow: 0 2px 18px rgba(28, 24, 21, 0.42);
+}
+
+/* Затемнение снизу, чтобы подпись читалась
+   на любой фотографии */
+.about-image__media::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 55%;
+
+    background: linear-gradient(to top, rgba(28, 24, 21, 0.42), rgba(28, 24, 21, 0));
+
+    pointer-events: none;
+}
+
+
+/* ========================================
+   10. CTA
+   ======================================== */
+
+.about-cta {
+    background: #ffffff;
+
+    padding: 0 0 clamp(56px, 6vw, 88px);
+}
+
+.about-cta__inner {
+    border: 1px solid var(--about-line);
+    border-radius: calc(var(--about-radius) * 2);
+
+    background: var(--about-beige);
+
+    padding: clamp(38px, 5vw, 64px) clamp(24px, 5vw, 64px);
+
+    text-align: center;
+
+    animation: about-fade-up 0.7s var(--about-ease) both;
+}
+
+.about-cta__title {
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: clamp(24px, 2.9vw, 36px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+}
+
+.about-cta__text {
+    max-width: 54ch;
+
+    margin: 14px auto 0;
+
+    color: var(--about-muted);
+
+    font-family: var(--about-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+.about-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 28px;
+}
+
+.about-cta__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+    min-width: 0;
+    min-height: 50px;
+
+    padding: 14px 32px;
+
+    /* Контурная кнопка без заливки: тонкая
+       полупрозрачная рамка и текст графитовым.
+       Блок CTA стоит на бежевом фоне, поэтому
+       белая обводка и белый текст здесь были бы
+       не видны — читаемость важнее. */
+    border: 1px solid rgba(47, 42, 38, 0.32);
+    border-radius: 3px;
+
+    background: transparent;
+    color: var(--about-ink);
+
+    font-family: var(--about-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    text-align: center;
+
+    transition:
+        background var(--about-ease),
+        color var(--about-ease),
+        border-color var(--about-ease),
+        transform var(--about-ease);
+}
+
+/* Лёгкая полупрозрачная заливка и более плотная
+   обводка: кнопка остаётся контурной, но явно
+   реагирует на наведение */
+.about-cta__link:hover {
+    background: rgba(47, 42, 38, 0.06);
+    border-color: var(--about-ink);
+    color: var(--about-ink);
+
+    transform: translateY(-2px);
+}
+
+.about-cta__link:active {
+    background: rgba(47, 42, 38, 0.12);
+
+    transform: translateY(0);
+}
+
+.about-cta__link:focus-visible {
+    outline: 2px solid var(--about-accent);
+    outline-offset: 3px;
+}
+
+/* Вторая кнопка отличается мягкой молочной
+   подложкой, чтобы пара читалась как набор */
+.about-cta__link--ghost {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.about-cta__link--ghost:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ========================================
+   11. АНИМАЦИИ ПОЯВЛЕНИЯ
+   ======================================== */
+
+@keyframes about-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes about-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================================
+   12. АДАПТИВНОСТЬ
+   ======================================== */
+
+/* --- 1280px --- */
+@media (max-width: 1280px) {
+
+    .about-hero,
+    .about-story,
+    .about-philosophy,
+    .about-process,
+    .about-values,
+    .about-image,
+    .about-cta {
+        --about-gutter: 30px;
+        --about-gap: 20px;
+    }
+}
+
+/* --- 1024px: философия и этапы по две колонки --- */
+@media (max-width: 1024px) {
+
+    .about-philosophy__grid,
+    .about-process__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-values__list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* --- 991px: двухколоночные блоки в столбец --- */
+@media (max-width: 991px) {
+
+    .about-hero {
+        padding: 38px 0 46px;
+    }
+
+    .about-hero__container {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+    .about-hero__media {
+        aspect-ratio: 16 / 11;
+    }
+
+    .about-hero__description {
+        max-width: 58ch;
+    }
+
+    .about-story__container {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 30px;
+    }
+
+    .about-story__media {
+        aspect-ratio: 16 / 11;
+    }
+
+    .about-story__body {
+        max-width: 62ch;
+    }
+
+    .about-image__media {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* --- 768px: этапы в одну колонку --- */
+@media (max-width: 768px) {
+
+    .about-hero,
+    .about-story,
+    .about-philosophy,
+    .about-process,
+    .about-values,
+    .about-image,
+    .about-cta {
+        --about-gutter: 22px;
+        --about-gap: 16px;
+    }
+
+    /* Вертикальная последовательность этапов */
+    .about-process__list {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+    .about-process-step {
+        padding: 20px 18px 22px;
+    }
+
+    .about-process-step__title {
+        font-size: 18px;
+    }
+
+    .about-philosophy__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-philosophy-card {
+        padding: 22px 18px 24px;
+    }
+
+    .about-philosophy-card__title {
+        font-size: 18px;
+    }
+
+    .about-values__list {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 26px;
+    }
+
+    .about-value__title {
+        font-size: clamp(22px, 5vw, 28px);
+    }
+
+    .about-cta__link {
+        padding: 13px 22px;
+    }
+}
+
+/* --- 576px: философия в одну колонку --- */
+@media (max-width: 576px) {
+
+    .about-hero__title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .about-hero__subtitle {
+        font-size: 16px;
+    }
+
+    .about-hero__description {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .about-philosophy__grid {
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 0;
+    }
+
+    .about-philosophy-card {
+        padding: 20px 0 22px;
+    }
+
+    .about-cta__actions {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .about-cta__link {
+        width: 100%;
+    }
+}
+
+/* --- 480px --- */
+@media (max-width: 480px) {
+
+    .about-hero,
+    .about-story,
+    .about-philosophy,
+    .about-process,
+    .about-values,
+    .about-image,
+    .about-cta {
+        --about-gutter: 18px;
+    }
+
+    .about-hero {
+        padding: 32px 0 40px;
+    }
+
+    .about-hero__eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.14em;
+    }
+
+    .about-hero__title {
+        margin-top: 12px;
+
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .about-hero__subtitle {
+        margin-top: 14px;
+    }
+
+    .about-hero__media,
+    .about-story__media {
+        aspect-ratio: 4 / 3;
+
+        border-radius: var(--about-radius);
+    }
+
+    .about-image__media {
+        aspect-ratio: 4 / 3;
+
+        border-radius: var(--about-radius);
+    }
+
+    .about-cta__inner {
+        border-radius: var(--about-radius);
+
+        padding: 28px 20px;
+    }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+
+    .about-hero,
+    .about-story,
+    .about-philosophy,
+    .about-process,
+    .about-values,
+    .about-image,
+    .about-cta {
+        --about-gutter: 16px;
+    }
+
+    .about-hero__title {
+        font-size: 27px;
+    }
+
+    .about-hero__description {
+        margin-top: 13px;
+
+        font-size: 13.5px;
+    }
+
+    .about-story__title,
+    .about-philosophy__title,
+    .about-process__title,
+    .about-values__title,
+    .about-cta__title {
+        font-size: 22px;
+    }
+
+    .about-story__lead {
+        margin-top: 16px;
+
+        font-size: 14.5px;
+    }
+
+    .about-story__body {
+        font-size: 13.5px;
+    }
+
+    .about-image__caption {
+        font-size: 19px;
+    }
+
+    .about-cta__inner {
+        padding: 26px 16px;
+    }
+
+    .about-cta__text {
+        font-size: 13.5px;
+    }
+
+    .about-cta__link {
+        padding: 12px 14px;
+
+        font-size: 12px;
+    }
+}
+
+/* --- 320px: без горизонтального скролла --- */
+@media (max-width: 320px) {
+
+    .about-hero,
+    .about-story,
+    .about-philosophy,
+    .about-process,
+    .about-values,
+    .about-image,
+    .about-cta {
+        --about-gutter: 12px;
+        --about-gap: 12px;
+    }
+
+    .about-hero__title {
+        font-size: 25px;
+        letter-spacing: -0.025em;
+    }
+
+    .about-hero__subtitle {
+        font-size: 15px;
+    }
+
+    .about-hero__description {
+        font-size: 13px;
+    }
+
+    .about-philosophy-card {
+        padding: 18px 0 20px;
+    }
+
+    .about-philosophy-card__title {
+        font-size: 17px;
+    }
+
+    .about-philosophy-card__text {
+        font-size: 13.5px;
+    }
+
+    .about-process-step {
+        padding: 18px 14px 20px;
+    }
+
+    .about-process-step__title {
+        font-size: 17px;
+    }
+
+    .about-process-step__text {
+        font-size: 13.5px;
+    }
+
+    .about-value__title {
+        font-size: 21px;
+    }
+
+    .about-value__text {
+        margin-top: 12px;
+
+        font-size: 13.5px;
+    }
+
+    .about-image__caption {
+        bottom: 16px;
+
+        padding-inline: 14px;
+
+        font-size: 17px;
+    }
+
+    .about-cta__inner {
+        padding: 24px 14px;
+    }
+
+    .about-cta__link {
+        padding: 12px 10px;
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* ========================================
+   13. REDUCED MOTION
+   Декоративные эффекты отключаются,
+   фокус-состояния остаются видимыми.
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-hero__content,
+    .about-hero__media,
+    .about-story__text,
+    .about-story__media,
+    .about-philosophy__header,
+    .about-philosophy-card,
+    .about-process__header,
+    .about-process-step,
+    .about-values__title,
+    .about-value,
+    .about-image__media,
+    .about-cta__inner {
+        animation: none;
+    }
+
+    .about-hero__image,
+    .about-story__image,
+    .about-image__img,
+    .about-philosophy-card,
+    .about-process-step,
+    .about-value,
+    .about-cta__link {
+        transition-duration: 0.01ms;
+    }
+
+    .about-hero__media:hover .about-hero__image,
+    .about-story__media:hover .about-story__image,
+    .about-image__media:hover .about-image__img,
+    .about-philosophy-card:hover,
+    .about-process-step:hover,
+    .about-cta__link:hover {
+        transform: none;
+    }
+}

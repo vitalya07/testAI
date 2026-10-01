@@ -34,9 +34,18 @@
     width: 100%;
     max-width: 1280px;
 
+    min-width: 0;
+
     margin-inline: auto;
 
     padding-inline: 44px;
+}
+
+/* Дочерние колонки тоже должны уметь сжиматься,
+   иначе 1fr не даст им уменьшиться ниже
+   содержимого и grid растёт за пределы экрана */
+.footer__column {
+    min-width: 0;
 }
 
 
@@ -254,37 +263,48 @@
    BOTTOM
    ======================================== */
 
+/* Нижний блок тянется на всю ширину футера, чтобы
+   разделитель можно было рисовать без 100vw. Сам текст
+   ограничен контейнером 1280px — см. .footer__copyright */
 .footer__bottom {
     position: relative;
 
     width: 100%;
-    max-width: 1280px;
 
-    margin: 64px auto 0;
+    margin: 64px 0 0;
 
     padding: 28px 44px;
 
     text-align: left;
 }
 
-/* разделитель на всю ширину футера, текст — по контейнеру */
+/* Разделитель на всю ширину футера.
+   Раньше здесь стояло width: 100vw с left: 50% и
+   translateX(-50%). Это и вызывало горизонтальную
+   прокрутку: 100vw не учитывает ширину вертикального
+   скроллбара, поэтому полоса всегда была шире
+   видимой области ровно на ширину скроллбара.
+   Теперь растягиваем псевдоэлемент по краям
+   родителя — результат визуально тот же. */
 .footer__bottom::before {
     content: "";
 
     position: absolute;
     top: 0;
-    left: 50%;
-    width: 100vw;
+    left: 0;
+    right: 0;
 
     height: 1px;
 
     background: rgba(242, 237, 231, 0.14);
-
-    transform: translateX(-50%);
 }
 
+/* Копирайт повторяет прежнее положение текста:
+   1280px контейнер минус боковые padding 44px */
 .footer__copyright {
-    margin: 0;
+    max-width: 1192px;
+
+    margin: 0 auto;
 
     color: rgba(242, 237, 231, 0.5);
     font-size: 12px;
@@ -502,6 +522,12 @@
     .footer__social-link {
         padding: 7px 11px;
         font-size: 11.5px;
+    }
+
+    .footer__contact--phone,
+    .footer__contact--email {
+        min-width: 0;
+        overflow-wrap: anywhere;
     }
 
     .footer__bottom {

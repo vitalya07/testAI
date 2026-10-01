@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — NORD HOME</title>
+    <meta name="description" content="Контакты NORD HOME: телефон, email, адрес и форма обратной связи. Мы поможем подобрать товары для дома и ответим на любые вопросы.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+
+            <a class="header__logo" href="index.html">
+                <span class="header__logo-name">NORD</span>
+                <span class="header__logo-sub">HOME</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="new.html">Новинки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="popular.html">Популярное</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="home.html">Для дома</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="about.html">О нас</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link header__nav-link--active" href="contacts.html" aria-current="page">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a class="header__search" href="search.html">
+                    <span class="header__search-icon" aria-hidden="true">🔍</span>
+                    <span class="header__search-text">Поиск</span>
+                </a>
+                <a class="header__favorites" href="favorites.html" aria-label="Избранное">
+                    <span class="header__favorites-icon" aria-hidden="true">♡</span>
+                </a>
+                <a class="header__cart" href="cart.html" aria-label="Корзина">
+                    <span class="header__cart-icon" aria-hidden="true">🛒</span>
+                    <span class="header__cart-count">2</span>
+                </a>
+
+                <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header__burger-box">
+                        <span class="header__burger-line header__burger-line--top"></span>
+                        <span class="header__burger-line header__burger-line--middle"></span>
+                        <span class="header__burger-line header__burger-line--bottom"></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ================= HERO ================= -->
+        <section class="contacts-hero" aria-labelledby="contacts-hero-title">
+            <div class="contacts-hero__container">
+
+                <p class="contacts-hero__eyebrow">КОНТАКТЫ</p>
+
+                <h1 class="contacts-hero__title" id="contacts-hero-title">Мы всегда на связи</h1>
+
+                <p class="contacts-hero__text">
+                    Есть вопросы по заказу, товарам или сотрудничеству? Напишите нам — мы с удовольствием поможем.
+                </p>
+
+                <div class="contacts-hero__actions">
+                    <a class="contacts-hero__link" href="#contacts-form">Написать нам</a>
+                    <span class="contacts-hero__mark" aria-hidden="true"></span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= КОНТАКТЫ ================= -->
+        <section class="contacts-info" id="contacts-info" aria-labelledby="contacts-info-title">
+            <div class="contacts-info__container">
+
+                <div class="contacts-info__header">
+                    <p class="contacts-info__eyebrow">Связаться</p>
+                    <h2 class="contacts-info__title" id="contacts-info-title">Как с нами связаться</h2>
+                </div>
+
+                <div class="contacts-info__grid">
+
+                    <article class="contacts-card">
+                        <span class="contacts-card__number" aria-hidden="true">01</span>
+                        <p class="contacts-card__label">Телефон</p>
+                        <a class="contacts-card__value" href="tel:+79991234567">+7 (999) 123-45-67</a>
+                    </article>
+
+                    <article class="contacts-card">
+                        <span class="contacts-card__number" aria-hidden="true">02</span>
+                        <p class="contacts-card__label">Email</p>
+                        <a class="contacts-card__value" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </article>
+
+                    <article class="contacts-card">
+                        <span class="contacts-card__number" aria-hidden="true">03</span>
+                        <p class="contacts-card__label">Адрес</p>
+                        <p class="contacts-card__value contacts-card__value--text">Москва, ул. Примерная, 12</p>
+                    </article>
+
+                    <article class="contacts-card">
+                        <span class="contacts-card__number" aria-hidden="true">04</span>
+                        <p class="contacts-card__label">Время работы</p>
+                        <p class="contacts-card__value contacts-card__value--text">Ежедневно<br>10:00–20:00</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ФОРМА ================= -->
+        <section class="contacts-form" id="contacts-form" aria-labelledby="contacts-form-title">
+            <div class="contacts-form__container">
+
+                <div class="contacts-form__text">
+                    <p class="contacts-form__eyebrow">НАПИШИТЕ НАМ</p>
+                    <h2 class="contacts-form__title" id="contacts-form-title">Расскажите, чем мы можем помочь</h2>
+                    <p class="contacts-form__subtitle">
+                        Оставьте сообщение, и мы свяжемся с вами в ближайшее время.
+                    </p>
+                </div>
+
+                <!-- Демонстрационная форма: отправка на сервер не подключена -->
+                <form class="contacts-form__body" action="#" method="post">
+
+                    <div class="contacts-form__field">
+                        <label class="contacts-form__label" for="contacts-name">Имя</label>
+                        <input class="contacts-form__input" type="text" id="contacts-name" name="name" placeholder="Как к вам обращаться" autocomplete="name">
+                    </div>
+
+                    <div class="contacts-form__field">
+                        <label class="contacts-form__label" for="contacts-email">Email</label>
+                        <input class="contacts-form__input" type="email" id="contacts-email" name="email" placeholder="hello@nordhome.ru" autocomplete="email">
+                    </div>
+
+                    <div class="contacts-form__field contacts-form__field--wide">
+                        <label class="contacts-form__label" for="contacts-message">Сообщение</label>
+                        <textarea class="contacts-form__input contacts-form__textarea" id="contacts-message" name="message" rows="6" placeholder="Расскажите, чем мы можем помочь"></textarea>
+                    </div>
+
+                    <div class="contacts-form__actions">
+                        <button class="contacts-form__button" type="submit">Отправить сообщение</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+        <!-- ================= СОЦИАЛЬНЫЕ СЕТИ ================= -->
+        <section class="contacts-socials" aria-labelledby="contacts-socials-title">
+            <div class="contacts-socials__container">
+
+                <h2 class="contacts-socials__title" id="contacts-socials-title">Мы в социальных сетях</h2>
+
+                <ul class="contacts-socials__list">
+                    <li class="contacts-socials__item">
+                        <a class="contacts-socials__link" href="#">VK</a>
+                    </li>
+                    <li class="contacts-socials__item">
+                        <a class="contacts-socials__link" href="#">Telegram</a>
+                    </li>
+                    <li class="contacts-socials__item">
+                        <a class="contacts-socials__link" href="#">Instagram</a>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- ================= CTA ================= -->
+        <section class="contacts-cta" aria-labelledby="contacts-cta-title">
+            <div class="contacts-cta__panel">
+
+                <p class="contacts-cta__eyebrow">NORD HOME</p>
+                <h2 class="contacts-cta__title" id="contacts-cta-title">Дом начинается с деталей.</h2>
+                <p class="contacts-cta__text">
+                    Откройте коллекцию NORD HOME и найдите то, что сделает ваш дом ещё уютнее.
+                </p>
+                <a class="contacts-cta__link" href="catalog.html">Перейти в каталог</a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <p class="footer__logo">NORD HOME</p>
+                <p class="footer__about">
+                    Декор и аксессуары<br>
+                    для современного дома.
+                </p>
+            </div>
+
+            <nav class="footer__column" aria-labelledby="footer-shop-title">
+                <h2 class="footer__column-title" id="footer-shop-title">Магазин</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="new.html">Новинки</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="popular.html">Популярное</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="home.html">Для дома</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="sale.html">Акции</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__column" aria-labelledby="footer-customers-title">
+                <h2 class="footer__column-title" id="footer-customers-title">Покупателям</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="delivery.html">Доставка</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="payment.html">Оплата</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="return.html">Возврат</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="faq.html">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__column" aria-labelledby="footer-contacts-title">
+                <h2 class="footer__column-title" id="footer-contacts-title">Контакты</h2>
+                <ul class="footer__list footer__list--contacts">
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--phone" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--email" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </li>
+                </ul>
+                <ul class="footer__socials">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="telegram.html">Telegram</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="vk.html">VK</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="instagram.html">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 NORD HOME. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

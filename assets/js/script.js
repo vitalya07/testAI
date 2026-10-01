@@ -89,22 +89,40 @@
         }, 0);
     }
 
-/* Стабильный ключ товара: data-id, затем ссылка на карточку,
-       иначе — индекс в секции */
+    /* ========================================
+       КАРТОЧКИ ТОВАРОВ
+       На главной и в каталоге это .product-card,
+       на странице новинок — .new-product-card,
+       на странице популярного — .popular-product-card,
+       на странице «Для дома» — .home-product-card.
+       Селекторы собраны списком, чтобы избранное
+       и корзина работали на всех страницах
+       поверх одного и того же localStorage.
+       ======================================== */
+
+    var CARD = '.product-card, .new-product-card, .popular-product-card, .home-product-card';
+    var FAVORITE_BUTTON = '.product-card__favorite, .new-product-card__favorite, .popular-product-card__favorite, .home-product-card__favorite';
+    var CART_BUTTON = '.product-card__button, .new-product-card__button, .popular-product-card__button, .home-product-card__button';
+    var CARD_LINK = '.product-card__link, .new-product-card__link, .popular-product-card__link, .home-product-card__link';
+    var CARD_TITLE = '.product-card__title, .new-product-card__title, .popular-product-card__title, .home-product-card__title';
+    var CARD_PRICE = '.product-card__price, .new-product-card__price, .popular-product-card__price, .home-product-card__price';
+    var CARD_IMAGE = '.product-card__image, .new-product-card__image, .popular-product-card__image, .home-product-card__image';
+
+    /* Стабильный ключ товара: ссылка на карточку.
+       Она одинакова на всех страницах, поэтому
+       избранное и корзина совпадают между ними */
     function getProductId(card, index) {
-        /* Явный data-id важнее ссылки: он одинаков
-           на всех страницах и не зависит от URL */
-        var explicit = card.getAttribute && card.getAttribute('data-id');
-
-        if (explicit) {
-            return explicit;
-        }
-
-        var link = qs('.product-card__link', card);
+        var link = qs(CARD_LINK, card);
         var href = link && link.getAttribute('href');
 
         if (href) {
             return href.replace(/^.*[?#]/, '');
+        }
+
+        var explicit = card.getAttribute && card.getAttribute('data-id');
+
+        if (explicit) {
+            return explicit;
         }
 
         var section = card.closest ? card.closest('section') : null;
@@ -114,8 +132,8 @@
     }
 
     function getProductTitle(card) {
-        var link = qs('.product-card__link', card);
-        var title = qs('.product-card__title', card);
+        var link = qs(CARD_LINK, card);
+        var title = qs(CARD_TITLE, card);
 
         if (link && link.textContent.trim()) {
             return link.textContent.trim();
@@ -129,7 +147,7 @@
     }
 
     function getProductPrice(card) {
-        var priceEl = qs('.product-card__price', card);
+        var priceEl = qs(CARD_PRICE, card);
 
         if (!priceEl) {
             return 0;
@@ -141,7 +159,7 @@
     }
 
     function getProductImage(card) {
-        var img = qs('.product-card__image', card);
+        var img = qs(CARD_IMAGE, card);
 
         return img ? img.getAttribute('src') || '' : '';
     }
@@ -589,7 +607,7 @@
        ======================================== */
 
     function initFavorites() {
-        var buttons = qsa('.product-card__favorite');
+        var buttons = qsa(FAVORITE_BUTTON);
 
         if (buttons.length === 0) {
             return;
@@ -612,7 +630,7 @@
             button.classList.toggle('is-active', Boolean(active));
             button.setAttribute('aria-pressed', active ? 'true' : 'false');
 
-            var title = getProductTitle(button.closest('.product-card'));
+            var title = getProductTitle(button.closest(CARD));
 
             button.setAttribute(
                 'aria-label',
@@ -621,7 +639,7 @@
         }
 
         buttons.forEach(function (button, index) {
-            var card = button.closest ? button.closest('.product-card') : null;
+            var card = button.closest ? button.closest(CARD) : null;
 
             if (!card) {
                 return;
@@ -654,7 +672,7 @@
        ======================================== */
 
     function initCart() {
-        var addButtons = qsa('.product-card__button');
+        var addButtons = qsa(CART_BUTTON);
         var counter = qs('.header__cart-count');
 
         var cart = readStorage(STORAGE_CART, []).filter(function (item) {
@@ -703,7 +721,7 @@
         }
 
         addButtons.forEach(function (button, index) {
-            var card = button.closest ? button.closest('.product-card') : null;
+            var card = button.closest ? button.closest(CARD) : null;
 
             if (!card) {
                 return;
@@ -711,6 +729,7 @@
 
             button.addEventListener('click', function (event) {
                 event.preventDefault();
+                event.stopPropagation();
 
                 addItem(
                     getProductId(card, index),
