@@ -1,0 +1,602 @@
+/* ========================================
+   NORD HOME — SEARCH
+   Стили модального поиска.
+   Палитра и шрифт те же, что в cart.css,
+   favorites.css и contacts.css.
+   ======================================== */
+
+/* ========================================
+   1. КНОПКА ПОИСКА В ШАПКЕ
+   Раньше это была ссылка <a>. Теперь это
+   <button>, поэтому сбрасываем стили браузера,
+   чтобы вид не изменился.
+   ======================================== */
+
+button.header__search {
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    font: inherit;
+    color: inherit;
+
+    cursor: pointer;
+}
+
+button.header__search:focus-visible {
+    outline: 1px solid #111111;
+    outline-offset: 4px;
+}
+
+
+/* ========================================
+   2. ПЕРЕМЕННЫЕ
+   ======================================== */
+
+.search-overlay {
+    --search-ink: #2f2a26;
+    --search-muted: #6f6861;
+    --search-soft: #8a8177;
+    --search-line: #e8e5e1;
+    --search-cream: #faf8f5;
+    --search-accent: #8a7258;
+
+    --search-font: "Helvetica Neue", Arial, sans-serif;
+
+    --search-ease: 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+/* ========================================
+   3. ЗАТЕМНЕНИЕ И ОКНО
+   ======================================== */
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 900;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: clamp(24px, 6vh, 80px) 24px;
+
+    background: rgba(24, 21, 19, 0.42);
+
+    overflow-y: auto;
+
+    font-family: var(--search-font);
+}
+
+.search-overlay *,
+.search-overlay *::before,
+.search-overlay *::after {
+    box-sizing: border-box;
+}
+
+.search-overlay[hidden] {
+    display: none;
+}
+
+/* Пока окно открыто, страница под ним не скроллится */
+.is-search-open,
+.is-search-open body {
+    overflow: hidden;
+}
+
+.search-dialog {
+    width: 100%;
+    max-width: 760px;
+    min-width: 0;
+
+    max-height: calc(100vh - 2 * clamp(24px, 6vh, 80px));
+
+    padding: clamp(24px, 3.4vw, 40px);
+
+    background: #ffffff;
+    border: 1px solid var(--search-line);
+    border-radius: 4px;
+
+    overflow-y: auto;
+    overscroll-behavior: contain;
+
+    animation: search-dialog-in 0.32s var(--search-ease) both;
+}
+
+.search-dialog__head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+.search-dialog__title {
+    min-width: 0;
+
+    color: var(--search-ink);
+    font-family: var(--search-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.16em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.search-dialog__close {
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    margin: -8px -8px 0 0;
+
+    border: 0;
+    border-radius: 3px;
+
+    background: transparent;
+
+    color: var(--search-soft);
+
+    font-family: var(--search-font);
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background var(--search-ease),
+        color var(--search-ease);
+}
+
+.search-dialog__close:hover {
+    background: var(--search-cream);
+
+    color: var(--search-ink);
+}
+
+.search-dialog__close:focus-visible {
+    outline: 2px solid var(--search-accent);
+    outline-offset: 2px;
+}
+
+
+/* ========================================
+   4. ПОЛЕ ПОИСКА
+   ======================================== */
+
+.search-dialog__input {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 20px;
+    padding: 16px 18px;
+
+    border: 1px solid var(--search-line);
+    border-radius: 3px;
+
+    background: var(--search-cream);
+    color: var(--search-ink);
+
+    font-family: var(--search-font);
+    font-size: clamp(16px, 1.8vw, 19px);
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    appearance: none;
+
+    transition:
+        border-color var(--search-ease),
+        background var(--search-ease),
+        box-shadow var(--search-ease);
+}
+
+.search-dialog__input::placeholder {
+    color: #b3aca4;
+}
+
+.search-dialog__input:hover {
+    border-color: #d8d2cb;
+}
+
+.search-dialog__input:focus {
+    background: #ffffff;
+
+    border-color: var(--search-accent);
+    box-shadow: 0 0 0 3px rgba(138, 114, 88, 0.1);
+
+    outline: none;
+}
+
+.search-dialog__input:focus-visible {
+    outline: 2px solid var(--search-accent);
+    outline-offset: 2px;
+}
+
+/* Убираем нативный крестик в WebKit,
+   закрытие выполняет кнопка × */
+.search-dialog__input::-webkit-search-cancel-button {
+    appearance: none;
+}
+
+.search-dialog__label {
+    margin-top: 26px;
+
+    color: var(--search-soft);
+
+    font-family: var(--search-font);
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 0.14em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+
+/* ========================================
+   5. РЕЗУЛЬТАТЫ
+   ======================================== */
+
+.search-dialog__results {
+    margin-top: 14px;
+}
+
+.search-dialog__list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.search-dialog__item {
+    min-width: 0;
+}
+
+.search-dialog__item + .search-dialog__item {
+    border-top: 1px solid var(--search-line);
+}
+
+.search-dialog__item-link {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    padding: 14px 12px;
+
+    border-radius: 3px;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: background var(--search-ease);
+}
+
+.search-dialog__item-link:hover {
+    background: var(--search-cream);
+}
+
+.search-dialog__item-link:focus-visible {
+    outline: 2px solid var(--search-accent);
+    outline-offset: -2px;
+}
+
+.search-dialog__item-media {
+    flex-shrink: 0;
+
+    display: block;
+
+    width: 56px;
+    height: 56px;
+
+    overflow: hidden;
+
+    background: var(--search-cream);
+    border: 1px solid var(--search-line);
+    border-radius: 3px;
+}
+
+.search-dialog__item-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.search-dialog__item-info {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    margin-left: 16px;
+}
+
+.search-dialog__item-title {
+    min-width: 0;
+
+    color: var(--search-ink);
+
+    font-family: var(--search-font);
+    font-size: 15px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+.search-dialog__item-price {
+    margin-top: 4px;
+
+    color: var(--search-muted);
+
+    font-family: var(--search-font);
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.4;
+
+    font-variant-numeric: tabular-nums;
+}
+
+
+/* ========================================
+   6. СООБЩЕНИЯ
+   Пустой запрос и отсутствие результатов
+   ======================================== */
+
+.search-dialog__message {
+    padding: 18px 12px;
+
+    background: var(--search-cream);
+    border: 1px solid var(--search-line);
+    border-radius: 3px;
+}
+
+.search-dialog__message-title {
+    color: var(--search-ink);
+
+    font-family: var(--search-font);
+    font-size: 15px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+.search-dialog__message-text {
+    margin-top: 7px;
+
+    color: var(--search-muted);
+
+    font-family: var(--search-font);
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.55;
+}
+
+
+/* ========================================
+   7. АНИМАЦИЯ
+   ======================================== */
+
+@keyframes search-dialog-in {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   8. АДАПТИВНОСТЬ
+   ======================================== */
+
+/* --- 1024px --- */
+@media (max-width: 1024px) {
+
+    .search-overlay {
+        padding: clamp(20px, 5vh, 56px) 20px;
+    }
+
+    .search-dialog {
+        max-width: 680px;
+    }
+}
+
+/* --- 768px --- */
+@media (max-width: 768px) {
+
+    .search-overlay {
+        padding: 16px 16px 24px;
+    }
+
+    .search-dialog {
+        max-height: calc(100vh - 40px);
+
+        padding: 22px 20px;
+    }
+
+    .search-dialog__input {
+        margin-top: 16px;
+
+        padding: 14px 15px;
+    }
+
+    .search-dialog__label {
+        margin-top: 20px;
+    }
+}
+
+/* --- 480px --- */
+@media (max-width: 480px) {
+
+    .search-overlay {
+        padding: 12px 12px 20px;
+    }
+
+    .search-dialog {
+        padding: 20px 16px;
+
+        border-radius: 3px;
+    }
+
+    .search-dialog__close {
+        width: 36px;
+        height: 36px;
+
+        margin: -6px -6px 0 0;
+
+        font-size: 20px;
+    }
+
+    .search-dialog__item-link {
+        padding: 12px 8px;
+    }
+
+    .search-dialog__item-media {
+        width: 48px;
+        height: 48px;
+    }
+
+    .search-dialog__item-info {
+        margin-left: 12px;
+    }
+
+    .search-dialog__item-title {
+        font-size: 14px;
+    }
+
+    .search-dialog__item-price {
+        font-size: 12.5px;
+    }
+
+    .search-dialog__message {
+        padding: 16px 12px;
+    }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+
+    .search-overlay {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .search-dialog {
+        padding: 18px 14px;
+    }
+
+    .search-dialog__input {
+        padding: 13px 13px;
+
+        font-size: 16px;
+    }
+
+    .search-dialog__item-title {
+        font-size: 13.5px;
+    }
+
+    .search-dialog__message-title {
+        font-size: 14px;
+    }
+
+    .search-dialog__message-text {
+        font-size: 12.5px;
+    }
+}
+
+/* --- 320px: без горизонтального скролла --- */
+@media (max-width: 320px) {
+
+    .search-overlay {
+        padding: 10px 8px 16px;
+    }
+
+    .search-dialog {
+        padding: 16px 12px;
+
+        border-radius: 3px;
+    }
+
+    .search-dialog__title {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+    }
+
+    .search-dialog__close {
+        width: 34px;
+        height: 34px;
+
+        font-size: 19px;
+    }
+
+    .search-dialog__input {
+        padding: 12px 12px;
+
+        font-size: 16px;
+    }
+
+    .search-dialog__label {
+        margin-top: 18px;
+
+        font-size: 10px;
+    }
+
+    .search-dialog__item-media {
+        width: 42px;
+        height: 42px;
+    }
+
+    .search-dialog__item-info {
+        margin-left: 10px;
+    }
+
+    .search-dialog__item-title {
+        font-size: 13px;
+    }
+
+    .search-dialog__item-price {
+        font-size: 12px;
+    }
+}
+
+
+/* ========================================
+   9. REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .search-dialog {
+        animation: none;
+    }
+
+    .search-dialog__close,
+    .search-dialog__input,
+    .search-dialog__item-link {
+        transition-duration: 0.01ms;
+    }
+}

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свеча «Север» — NORD HOME</title>
+    <meta name="description" content="Свеча «Север» из натурального воска с хвойным ароматом. Спокойный свет для долгих вечеров. Декор NORD HOME.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/script.js" defer></script>
+    <script src="../assets/js/search.js" defer></script>
+    <script src="../assets/js/product.js" defer></script>
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+        <div class="header__container">
+
+            <a class="header__logo" href="../index.html">
+                <span class="header__logo-name">NORD</span>
+                <span class="header__logo-sub">HOME</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Основная навигация">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../catalog.html">Каталог</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../new.html">Новинки</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../popular.html">Популярное</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../home.html">Для дома</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../about.html">О нас</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="../contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="header__search" type="button" aria-label="Открыть поиск" aria-haspopup="dialog">
+                    <span class="header__search-icon" aria-hidden="true">🔍</span>
+                    <span class="header__search-text">Поиск</span>
+                </button>
+                <a class="header__favorites" href="../favorites.html" aria-label="Избранное">
+                    <span class="header__favorites-icon" aria-hidden="true">♡</span>
+                </a>
+                <a class="header__cart" href="../cart.html" aria-label="Корзина">
+                    <span class="header__cart-icon" aria-hidden="true">🛒</span>
+                    <span class="header__cart-count">0</span>
+                </a>
+
+                <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="header__burger-box">
+                        <span class="header__burger-line header__burger-line--top"></span>
+                        <span class="header__burger-line header__burger-line--middle"></span>
+                        <span class="header__burger-line header__burger-line--bottom"></span>
+                    </span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <!-- ================= ХЛЕБНЫЕ КРОШКИ ================= -->
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+            <div class="breadcrumbs__container">
+                <ol class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="../catalog.html">Каталог</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__current" aria-current="page">Свеча «Север»</span>
+                    </li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- ================= ОСНОВНОЙ БЛОК ================= -->
+        <section class="product"
+                 data-product-id="product/candle-sever.html"
+                 data-product-title="Свеча «Север»"
+                 data-product-price="1290"
+                 data-product-image="assets/images/product-candle.jpeg">
+            <div class="product__container">
+                <div class="product__layout">
+
+                    <div class="product__media">
+                        <figure class="product__image-box">
+                            <img class="product__image"
+                                 src="../assets/images/product-candle.jpeg"
+                                 alt="Свеча «Север» в молочном стеклянном стакане"
+                                 width="800"
+                                 height="800">
+                        </figure>
+                        <figcaption class="product__caption">Свет неспешный, аромат ненавязчивый</figcaption>
+                    </div>
+
+                    <div class="product__info">
+                        <h1 class="product__title">Свеча «Север»</h1>
+                        <p class="product__price">1 290 ₽</p>
+
+                        <p class="product__summary">
+                            Плотный воск, хлопковый фитиль и аромат хвои. Свеча даёт ровный
+                            свет без копоти и пахнет так, как пахнет хвойный лес после дождя.
+                        </p>
+
+                        <div class="product__quantity">
+                            <span class="product__quantity-label" id="product-quantity-label">Количество</span>
+                            <div class="product__quantity-control" role="group" aria-labelledby="product-quantity-label">
+                                <button class="product__quantity-button"
+                                        type="button"
+                                        data-product-quantity-decrease
+                                        aria-label="Уменьшить количество">−</button>
+                                <input class="product__quantity-value"
+                                       type="text"
+                                       inputmode="numeric"
+                                       autocomplete="off"
+                                       value="1"
+                                       size="3"
+                                       aria-label="Количество товара"
+                                       data-product-quantity-value>
+                                <button class="product__quantity-button"
+                                        type="button"
+                                        data-product-quantity-increase
+                                        aria-label="Увеличить количество">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product__actions">
+                            <button class="product__cart-button" type="button" data-product-add>
+                                <span data-add-label>Добавить в корзину</span>
+                            </button>
+                            <button class="product__favorite"
+                                    type="button"
+                                    aria-pressed="false"
+                                    data-product-favorite>
+                                <span class="product__favorite-icon" aria-hidden="true" data-favorite-icon>♡</span>
+                                <span data-favorite-label>В избранное</span>
+                            </button>
+                        </div>
+
+                        <p class="product__note">Доставка по России 3–7 дней. Упаковка — переработанный картон.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= О ТОВАРЕ ================= -->
+        <section class="product-about" aria-labelledby="product-about-title">
+            <div class="product__container">
+                <h2 class="product-about__title" id="product-about-title">О товаре</h2>
+
+                <div class="product-about__text">
+                    <p>
+                        «Север» — свеча для тех, кто любит закрывать дневные дела раньше времени.
+                        Её аромат собран на основе скандинавской хвои и сухих берёзовых листьев:
+                        он узнаваемый, но не навязчивый, не перебивает запах комнаты.
+                    </p>
+                    <p>
+                        Корпус — молочное стекло, которое отдаёт тепло даже в выключенном состоянии.
+                        Фитиль хлопковый, поэтому пламя ровное и не коптит: свеча хорошо работает
+                        в спальне, в кабинете и на ужине при неярком свете. Если поставить её
+                        на деревянную подставку, свет будет отражаться мягче.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ХАРАКТЕРИСТИКИ ================= -->
+        <section class="product-specs" aria-labelledby="product-specs-title">
+            <div class="product__container">
+                <h2 class="product-specs__title" id="product-specs-title">Характеристики</h2>
+
+                <dl class="product-specs__list">
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Материал</dt>
+                        <dd class="product-specs__value">Натуральный воск, молочное стекло</dd>
+                    </div>
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Аромат</dt>
+                        <dd class="product-specs__value">Хвоя, берёзовые листья</dd>
+                    </div>
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Время горения</dt>
+                        <dd class="product-specs__value">35–40 часов</dd>
+                    </div>
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Фитиль</dt>
+                        <dd class="product-specs__value">Хлопковый</dd>
+                    </div>
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Размер</dt>
+                        <dd class="product-specs__value">7 × 7 × 10 см</dd>
+                    </div>
+                    <div class="product-specs__row">
+                        <dt class="product-specs__term">Вес</dt>
+                        <dd class="product-specs__value">280 г</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ================= РЕКОМЕНДОВАННЫЕ ТОВАРЫ ================= -->
+        <section class="product-related" aria-labelledby="product-related-title">
+            <div class="product__container">
+                <h2 class="product-related__title" id="product-related-title">Вам также может понравиться</h2>
+
+                <ul class="product-related__grid">
+                    <li class="product-related__item"
+                        data-related-id="product/vase-minimal.html"
+                        data-related-title="Ваза «Минимал»"
+                        data-related-price="2490"
+                        data-related-image="assets/images/product-vase.jpeg">
+                        <a class="product-related__card" href="vase-minimal.html">
+                            <div class="product-related__media">
+                                <img class="product-related__image"
+                                     src="../assets/images/product-vase.jpeg"
+                                     alt="Ваза «Минимал»"
+                                     width="320"
+                                     height="320"
+                                     loading="lazy">
+                            </div>
+                            <div class="product-related__body">
+                                <h3 class="product-related__name">Ваза «Минимал»</h3>
+                                <p class="product-related__price">2 490 ₽</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="product-related__item"
+                        data-related-id="product/lamp-oslo.html"
+                        data-related-title="Настольная лампа «Осло»"
+                        data-related-price="4990"
+                        data-related-image="assets/images/product-lamp.webp">
+                        <a class="product-related__card" href="lamp-oslo.html">
+                            <div class="product-related__media">
+                                <img class="product-related__image"
+                                     src="../assets/images/product-lamp.webp"
+                                     alt="Настольная лампа «Осло»"
+                                     width="320"
+                                     height="320"
+                                     loading="lazy">
+                            </div>
+                            <div class="product-related__body">
+                                <h3 class="product-related__name">Настольная лампа «Осло»</h3>
+                                <p class="product-related__price">4 990 ₽</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="product-related__item"
+                        data-related-id="product/candlestick-stone.html"
+                        data-related-title="Подсвечник «Камень»"
+                        data-related-price="1590"
+                        data-related-image="assets/images/new-candlestick.jpg">
+                        <a class="product-related__card" href="candlestick-stone.html">
+                            <div class="product-related__media">
+                                <img class="product-related__image"
+                                     src="../assets/images/new-candlestick.jpg"
+                                     alt="Подсвечник «Камень»"
+                                     width="320"
+                                     height="320"
+                                     loading="lazy">
+                            </div>
+                            <div class="product-related__body">
+                                <h3 class="product-related__name">Подсвечник «Камень»</h3>
+                                <p class="product-related__price">1 590 ₽</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="product-related__item"
+                        data-related-id="product/diffuser-forest.html"
+                        data-related-title="Аромадиффузор «Лес»"
+                        data-related-price="1990"
+                        data-related-image="assets/images/new-diffuser.jpeg">
+                        <a class="product-related__card" href="diffuser-forest.html">
+                            <div class="product-related__media">
+                                <img class="product-related__image"
+                                     src="../assets/images/new-diffuser.jpeg"
+                                     alt="Аромадиффузор «Лес»"
+                                     width="320"
+                                     height="320"
+                                     loading="lazy">
+                            </div>
+                            <div class="product-related__body">
+                                <h3 class="product-related__name">Аромадиффузор «Лес»</h3>
+                                <p class="product-related__price">1 990 ₽</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="footer__container">
+
+            <div class="footer__brand">
+                <p class="footer__logo">NORD HOME</p>
+                <p class="footer__about">
+                    Декор и аксессуары<br>
+                    для современного дома.
+                </p>
+            </div>
+
+            <nav class="footer__column" aria-labelledby="footer-shop-title">
+                <h2 class="footer__column-title" id="footer-shop-title">Магазин</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="../catalog.html">Каталог</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../new.html">Новинки</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../popular.html">Популярное</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../home.html">Для дома</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../sale.html">Акции</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__column" aria-labelledby="footer-customers-title">
+                <h2 class="footer__column-title" id="footer-customers-title">Покупателям</h2>
+                <ul class="footer__list">
+                    <li class="footer__list-item"><a class="footer__link" href="../delivery.html">Доставка</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../payment.html">Оплата</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../return.html">Возврат</a></li>
+                    <li class="footer__list-item"><a class="footer__link" href="../faq.html">Вопросы и ответы</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer__column" aria-labelledby="footer-contacts-title">
+                <h2 class="footer__column-title" id="footer-contacts-title">Контакты</h2>
+                <ul class="footer__list footer__list--contacts">
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--phone" href="tel:+79001234567">+7 (900) 123-45-67</a>
+                    </li>
+                    <li class="footer__list-item">
+                        <a class="footer__contact footer__contact--email" href="mailto:hello@nordhome.ru">hello@nordhome.ru</a>
+                    </li>
+                </ul>
+                <ul class="footer__socials">
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="../telegram.html">Telegram</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="../vk.html">VK</a>
+                    </li>
+                    <li class="footer__social-item">
+                        <a class="footer__social-link" href="../instagram.html">Instagram</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">© 2026 NORD HOME. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

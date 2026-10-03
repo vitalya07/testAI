@@ -1,0 +1,728 @@
+/* ========================================
+   NORD HOME — FAVORITES
+   Стили страницы favorites.html.
+   Header и Footer приходят из header.css
+   и footer.css, здесь они не переопределяются.
+   ======================================== */
+
+/* ========================================
+   1. ПЕРЕМЕННЫЕ
+   Палитра и шрифт те же, что в cart.css,
+   about.css и contacts.css.
+   ======================================== */
+
+.favorites-hero,
+.favorites-content {
+    --favorites-ink: #2f2a26;
+    --favorites-muted: #6f6861;
+    --favorites-soft: #8a8177;
+    --favorites-line: #e8e5e1;
+    --favorites-cream: #faf8f5;
+    --favorites-accent: #8a7258;
+
+    --favorites-font: "Helvetica Neue", Arial, sans-serif;
+
+    --favorites-content-width: 1280px;
+    --favorites-gap: 22px;
+    --favorites-gutter: 32px;
+    --favorites-radius: 4px;
+
+    --favorites-ease: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+
+/* ========================================
+   2. БАЗА
+   ======================================== */
+
+.favorites-hero *,
+.favorites-content * {
+    box-sizing: border-box;
+}
+
+.favorites-hero a,
+.favorites-content a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.favorites-hero h1,
+.favorites-hero p,
+.favorites-content h2,
+.favorites-content p {
+    margin: 0;
+}
+
+.favorites-grid {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+/* Текст только для скринридеров */
+.favorites-visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    border: 0;
+    clip-path: inset(50%);
+}
+
+
+/* ========================================
+   3. СЕКЦИИ И КОНТЕЙНЕРЫ
+   width: 100%, а не 100vw: 100vw не учитывает
+   вертикальный скроллбар и даёт горизонтальную
+   прокрутку.
+   ======================================== */
+
+.favorites-hero,
+.favorites-content {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-width: 0;
+}
+
+.favorites-hero__container,
+.favorites-content__container {
+    width: 100%;
+    max-width: var(--favorites-content-width);
+
+    min-width: 0;
+
+    margin: 0 auto;
+    padding-inline: var(--favorites-gutter);
+}
+
+
+/* ========================================
+   4. HERO
+   ======================================== */
+
+.favorites-hero {
+    background: var(--favorites-cream);
+
+    padding: clamp(36px, 5vw, 72px) 0 clamp(38px, 5vw, 66px);
+}
+
+.favorites-hero__container {
+    max-width: 860px;
+
+    animation: favorites-fade-up 0.8s var(--favorites-ease) both;
+}
+
+.favorites-hero__title {
+    color: var(--favorites-ink);
+
+    font-family: var(--favorites-font);
+    font-size: clamp(32px, 4.6vw, 54px);
+    font-weight: 500;
+
+    letter-spacing: -0.03em;
+    line-height: 1.06;
+}
+
+.favorites-hero__text {
+    margin-top: 18px;
+
+    color: var(--favorites-muted);
+
+    font-family: var(--favorites-font);
+    font-size: clamp(15px, 1.4vw, 17px);
+    font-weight: 400;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   5. СЕТКА
+   desktop — 4 карточки, планшет — 3,
+   небольшой планшет — 2, мобильный — 1
+   ======================================== */
+
+.favorites-content {
+    background: #ffffff;
+
+    padding: clamp(34px, 4.5vw, 62px) 0 clamp(48px, 6vw, 88px);
+}
+
+.favorites-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: var(--favorites-gap);
+
+    min-width: 0;
+}
+
+/* normalize.css задаёт [hidden] раньше по файлу,
+   а display: grid здесь перекрыл бы его */
+.favorites-grid[hidden] {
+    display: none;
+}
+
+
+/* ========================================
+   6. КАРТОЧКА ТОВАРА
+   ======================================== */
+
+.favorites-card {
+    display: flex;
+    flex-direction: column;
+
+    /* без min-width: 0 grid-элемент не сжимается
+       уже содержимого и выталкивает сетку */
+    min-width: 0;
+
+    background: #ffffff;
+
+    animation: favorites-fade-up 0.6s var(--favorites-ease) both;
+
+    transition: transform var(--favorites-ease);
+}
+
+.favorites-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Плавное удаление: класс ставит favorites.js */
+.favorites-card.is-removing {
+    opacity: 0;
+    transform: translateX(-16px);
+}
+
+.favorites-card__media {
+    position: relative;
+    display: block;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: var(--favorites-cream);
+    border: 1px solid var(--favorites-line);
+    border-radius: var(--favorites-radius);
+}
+
+.favorites-card__image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    transition: transform var(--favorites-ease);
+}
+
+.favorites-card:hover .favorites-card__image {
+    transform: scale(1.03);
+}
+
+.favorites-card__body {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding-top: 14px;
+}
+
+.favorites-card__title {
+    min-width: 0;
+
+    color: var(--favorites-ink);
+
+    font-family: var(--favorites-font);
+    font-size: 15px;
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.favorites-card__price {
+    margin-top: 8px;
+
+    color: var(--favorites-muted);
+
+    font-family: var(--favorites-font);
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    font-variant-numeric: tabular-nums;
+}
+
+.favorites-card__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    min-width: 0;
+
+    margin-top: 14px;
+}
+
+/* Кнопка «В корзину» */
+.favorites-card__cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 12px 20px;
+
+    border: 1px solid var(--favorites-ink);
+    border-radius: 3px;
+
+    background: var(--favorites-ink);
+    color: #ffffff;
+
+    font-family: var(--favorites-font);
+    font-size: 12px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background var(--favorites-ease),
+        color var(--favorites-ease),
+        border-color var(--favorites-ease);
+}
+
+.favorites-card__cart:hover {
+    background: #ffffff;
+    border-color: var(--favorites-ink);
+    color: var(--favorites-ink);
+}
+
+.favorites-card__cart:focus-visible {
+    outline: 2px solid var(--favorites-accent);
+    outline-offset: 3px;
+}
+
+/* Состояние «Добавлено» повторяет
+   существующий стиль кнопок проекта */
+.favorites-card__cart.is-added {
+    background: #ffffff;
+    border-color: var(--favorites-ink);
+    color: var(--favorites-ink);
+}
+
+/* Удаление из избранного */
+.favorites-card__remove {
+    min-height: 44px;
+
+    padding: 10px 2px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--favorites-soft);
+
+    font-family: var(--favorites-font);
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition: color var(--favorites-ease);
+}
+
+.favorites-card__remove:hover {
+    color: var(--favorites-accent);
+}
+
+.favorites-card__remove:focus-visible {
+    outline: 2px solid var(--favorites-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+
+/* ========================================
+   7. ПУСТОЕ ИЗБРАННОЕ
+   ======================================== */
+
+.favorites-empty {
+    min-width: 0;
+
+    padding: clamp(40px, 5vw, 72px) 24px;
+
+    background: var(--favorites-cream);
+    border: 1px solid var(--favorites-line);
+    border-radius: calc(var(--favorites-radius) * 1.5);
+
+    text-align: center;
+
+    animation: favorites-fade-up 0.7s var(--favorites-ease) both;
+}
+
+.favorites-empty__mark {
+    display: block;
+
+    width: 44px;
+    height: 44px;
+
+    margin: 0 auto 26px;
+
+    border: 1px solid var(--favorites-line);
+    border-radius: 50%;
+
+    background:
+        linear-gradient(var(--favorites-accent), var(--favorites-accent)) center / 14px 1px no-repeat;
+}
+
+.favorites-empty__title {
+    color: var(--favorites-ink);
+
+    font-family: var(--favorites-font);
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+    line-height: 1.18;
+}
+
+.favorites-empty__text {
+    max-width: 46ch;
+
+    margin: 14px auto 0;
+
+    color: var(--favorites-muted);
+
+    font-family: var(--favorites-font);
+    font-size: 14.5px;
+    font-weight: 400;
+
+    line-height: 1.65;
+}
+
+/* Прозрачная кнопка с чёрной обводкой */
+.favorites-empty__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 100%;
+    min-width: 0;
+    min-height: 50px;
+
+    margin-top: 28px;
+    padding: 14px 28px;
+
+    border: 1px solid #000;
+    border-radius: 3px;
+
+    background: transparent;
+    color: #000;
+
+    font-family: var(--favorites-font);
+    font-size: 12.5px;
+    font-weight: 500;
+
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.favorites-empty__button:hover {
+    background-color: #000;
+    border-color: #000;
+
+    color: #fff;
+}
+
+.favorites-empty__button:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 3px;
+}
+
+
+/* ========================================
+   8. АНИМАЦИИ
+   ======================================== */
+
+@keyframes favorites-fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   9. АДАПТИВНОСТЬ
+   ======================================== */
+
+/* --- 1280px --- */
+@media (max-width: 1280px) {
+
+    .favorites-hero,
+    .favorites-content {
+        --favorites-gutter: 30px;
+        --favorites-gap: 20px;
+    }
+}
+
+/* --- 1024px: три карточки в ряд --- */
+@media (max-width: 1024px) {
+
+    .favorites-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* --- 768px: две карточки в ряд --- */
+@media (max-width: 768px) {
+
+    .favorites-hero,
+    .favorites-content {
+        --favorites-gutter: 22px;
+        --favorites-gap: 16px;
+    }
+
+    .favorites-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* --- 576px: одна карточка в ряд --- */
+@media (max-width: 576px) {
+
+    .favorites-hero__title {
+        font-size: clamp(30px, 9vw, 40px);
+    }
+
+    .favorites-hero__text {
+        font-size: 15px;
+    }
+
+    .favorites-empty {
+        padding: 34px 18px;
+
+        border-radius: var(--favorites-radius);
+    }
+}
+
+/* --- 480px --- */
+@media (max-width: 480px) {
+
+    .favorites-hero,
+    .favorites-content {
+        --favorites-gutter: 18px;
+    }
+
+    .favorites-hero {
+        padding: 28px 0 34px;
+    }
+
+    .favorites-hero__title {
+        font-size: 29px;
+        line-height: 1.1;
+    }
+
+    .favorites-hero__text {
+        margin-top: 14px;
+
+        font-size: 14.5px;
+    }
+
+    .favorites-content {
+        padding: 30px 0 42px;
+    }
+
+    .favorites-card__title {
+        font-size: 14.5px;
+    }
+
+    .favorites-card__actions {
+        gap: 8px;
+    }
+
+    .favorites-card__cart {
+        flex: 1 1 auto;
+
+        padding: 11px 16px;
+    }
+
+    .favorites-empty__button {
+        width: 100%;
+
+        padding: 13px 18px;
+    }
+}
+
+/* --- 375px --- */
+@media (max-width: 375px) {
+
+    .favorites-hero,
+    .favorites-content {
+        --favorites-gutter: 16px;
+    }
+
+    .favorites-hero__title {
+        font-size: 26px;
+    }
+
+    .favorites-card__body {
+        padding-top: 12px;
+    }
+
+    .favorites-card__title {
+        font-size: 14px;
+    }
+
+    .favorites-card__price {
+        font-size: 13px;
+    }
+
+    .favorites-card__cart {
+        font-size: 11.5px;
+    }
+
+    .favorites-card__remove {
+        font-size: 11.5px;
+    }
+
+    .favorites-empty {
+        padding: 30px 16px;
+    }
+
+    .favorites-empty__title {
+        font-size: 21px;
+    }
+
+    .favorites-empty__text {
+        font-size: 13.5px;
+    }
+}
+
+/* --- 320px: без горизонтального скролла --- */
+@media (max-width: 320px) {
+
+    .favorites-hero,
+    .favorites-content {
+        --favorites-gutter: 12px;
+        --favorites-gap: 12px;
+    }
+
+    .favorites-hero__title {
+        font-size: 24px;
+        letter-spacing: -0.025em;
+    }
+
+    .favorites-hero__text {
+        font-size: 13.5px;
+    }
+
+    .favorites-card__title {
+        font-size: 13.5px;
+    }
+
+    .favorites-card__price {
+        margin-top: 6px;
+
+        font-size: 12.5px;
+    }
+
+    .favorites-card__actions {
+        gap: 6px;
+    }
+
+    .favorites-card__cart {
+        min-height: 42px;
+
+        padding: 10px 12px;
+
+        font-size: 11px;
+    }
+
+    .favorites-card__remove {
+        min-height: 42px;
+
+        font-size: 11px;
+    }
+
+    .favorites-empty {
+        padding: 26px 14px;
+    }
+
+    .favorites-empty__text {
+        font-size: 13px;
+    }
+
+    .favorites-empty__button {
+        padding: 12px 10px;
+
+        font-size: 11.5px;
+    }
+}
+
+
+/* ========================================
+   10. REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .favorites-hero__container,
+    .favorites-card,
+    .favorites-empty {
+        animation: none;
+    }
+
+    .favorites-card,
+    .favorites-card__image,
+    .favorites-card__cart,
+    .favorites-card__remove {
+        transition-duration: 0.01ms;
+    }
+
+    .favorites-card:hover,
+    .favorites-card:hover .favorites-card__image {
+        transform: none;
+    }
+}
